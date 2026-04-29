@@ -57,9 +57,6 @@ class WorkloadControllerTest {
     @Test
     void shouldReturnMonthlyHours() throws Exception {
         TrainerWorkloadSummeryResponse response = new TrainerWorkloadSummeryResponse();
-        // set fields if needed
-        // response.setTotalHours(20);
-
         Mockito.when(workloadService.getWorkload("john", 2024, 5))
                 .thenReturn(response);
 

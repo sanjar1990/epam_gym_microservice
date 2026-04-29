@@ -1,0 +1,13 @@
+{
+  "firstName": "Anna",
+  "isActive": true,
+  "lastName": "Khan_trainer",
+  "username": "Anna.Khan_trainer",
+  "years": [
+    {
+      "duration": 50,
+      "month": 4,
+      "year": 2026
+    }
+  ]
+}

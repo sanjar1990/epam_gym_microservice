@@ -3,10 +3,12 @@ package com.epam.gym.workload.service;
 import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.dto.TrainerWorkloadSummeryResponse;
 import com.epam.gym.workload.dto.TrainingDate;
+import com.epam.gym.workload.dto.WorkloadCalculateRequestDTO;
 import com.epam.gym.workload.entity.Workload;
 import com.epam.gym.workload.enums.ActionType;
 import com.epam.gym.workload.mapper.WorkloadMapperI;
 import com.epam.gym.workload.repository.WorkloadRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -38,9 +40,9 @@ public class WorkloadService {
     }
 
 
-    public TrainerWorkloadSummeryResponse getWorkload(String username, int year, int month) {
+    public TrainerWorkloadSummeryResponse getWorkload(WorkloadCalculateRequestDTO dto) {
 
-        List<Object[]> rows = workloadRepository.getMonthlySummary(username);
+        List<Object[]> rows = workloadRepository.getMonthlySummary(dto.getTrainerUsername());
 
         if (rows.isEmpty()) {
             return null;
@@ -55,8 +57,7 @@ public class WorkloadService {
             int rowMonth = (int) row[5];
             int duration = ((Long) row[6]).intValue();
 
-            if (rowYear == year && rowMonth == month) {
-
+            if (rowYear == dto.getDate().getYear() && rowMonth == dto.getDate().getMonthValue()) {
                 response.setUsername((String) row[0]);
                 response.setFirstName((String) row[1]);
                 response.setLastName((String) row[2]);
@@ -73,5 +74,9 @@ public class WorkloadService {
 
         response.setYears(list);
         return response;
+    }
+
+    public void deleteWorkload(@Valid List<Long> trainingIdList) {
+        workloadRepository.deleteByTrainingId(trainingIdList);
     }
 }

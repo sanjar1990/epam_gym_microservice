@@ -85,7 +85,7 @@ class TrainingControllerTest {
         CreateTrainingDTO request = new CreateTrainingDTO();
         request.setTraineeUsername("john");
         request.setTrainingTypeId(1L);
-        request.setTrainingDate(LocalDate.now());
+        request.setTrainingDate(LocalDate.now().plusMonths(2));
         request.setTrainingDuration(60);
 
         when(trainingService.addTraining(any(), any()))

@@ -1,0 +1,9 @@
+### GEt workload calculated by trainer username and date (GET method)
+GET localhost:8082/api/v1/workload
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFubmEuS2hhbl90cmFpbmVyIiwiaWF0IjoxNzc3NDY4NTUzLCJleHAiOjE3Nzc3Mjc3NTN9.wciH6whdh1CT5fHwhGre-pIy_Zil5R4J_d7I7z_Pe8BA4L34n6Mg8zYheGv8kQ7c
+Content-Type: application/json
+
+{
+  "trainerUsername": "Anna.Khan_trainer",
+  "date": "2026-05-30"
+}

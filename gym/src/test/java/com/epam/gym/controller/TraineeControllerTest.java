@@ -104,13 +104,14 @@ class TraineeControllerTest {
     @Test
     void deleteTrainee_shouldReturn200() throws Exception {
 
-        doNothing().when(traineeService).deleteTrainee("john");
+        doNothing().when(traineeService).deleteTrainee("john", "Bearer token");
 
         mockMvc.perform(delete("/api/v1/trainee")
-                        .param("username", "john"))
+                        .param("username", "john")
+                        .header("Authorization", "Bearer token")) // ✅ FIX
                 .andExpect(status().isOk());
 
-        verify(traineeService).deleteTrainee("john");
+        verify(traineeService).deleteTrainee("john", "Bearer token");
     }
 
 

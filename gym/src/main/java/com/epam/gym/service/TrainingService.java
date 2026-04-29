@@ -46,6 +46,7 @@ public class TrainingService {
         if (!trainer.getTrainingType().getId().equals(dto.getTrainingTypeId())) {
             throw new RuntimeException("Training type id is not match");
         }
+
         Training training = trainingMapperI.toEntity(dto);
 
         training.setTrainee(trainee);

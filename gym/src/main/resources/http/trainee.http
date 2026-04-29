@@ -3,8 +3,8 @@ POST localhost:8080/api/v1/trainee/register
 Content-Type: application/json
 
 {
-  "firstName": "Alex",
-  "lastName": "Millerov",
+  "firstName": "TraineeTwo",
+  "lastName": "MillerovTwo",
   "dateOfBirth": "1993-01-01",
   "address": "Russia ganamgu"
   }
@@ -32,8 +32,8 @@ Content-Type: application/json
 
 #### 7. Delete Trainee Profile (DELETE method)
 
-DELETE localhost:8080/api/v1/trainee?username=Trainee1.Miller
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+DELETE localhost:8080/api/v1/trainee?username=TraineeTwo.MillerovTwo
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFubmEuS2hhbl90cmFpbmVyIiwiaWF0IjoxNzc3NDY4NTUzLCJleHAiOjE3Nzc3Mjc3NTN9.wciH6whdh1CT5fHwhGre-pIy_Zil5R4J_d7I7z_Pe8BA4L34n6Mg8zYheGv8kQ7c
 
 ### 11. Update Trainee's Trainer List (PUT method)
 
@@ -52,6 +52,6 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
 
 {
-  "username": "Trainee1.Miller",
+  "username": "TraineeTwo.MillerovTwo",
   "isActive": true
   }

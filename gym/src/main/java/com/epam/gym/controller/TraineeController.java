@@ -53,8 +53,9 @@ public class TraineeController {
     @DeleteMapping()
     @Operation(summary = "Delete Trainee ", description = "")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteTrainee(@RequestParam(name = "username") String username) {
-        traineeService.deleteTrainee(username);
+    public void deleteTrainee(@RequestParam(name = "username") String username,
+                              @RequestHeader("Authorization") String token) {
+        traineeService.deleteTrainee(username,token);
     }
 
 

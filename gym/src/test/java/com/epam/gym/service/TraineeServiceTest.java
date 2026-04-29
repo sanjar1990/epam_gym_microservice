@@ -3,13 +3,16 @@ package com.epam.gym.service;
 import com.epam.gym.dto.*;
 import com.epam.gym.entity.Trainee;
 import com.epam.gym.entity.Trainer;
+import com.epam.gym.entity.Training;
 import com.epam.gym.entity.User;
 import com.epam.gym.enums.UserRoleEnum;
 import com.epam.gym.exceptions.UserNotFoundException;
 import com.epam.gym.mapper.trainee.TraineeMapperI;
 import com.epam.gym.mapper.trainer.TrainerMapperI;
 import com.epam.gym.repository.TraineeRepository;
+import com.epam.gym.service.clint.WorkloadClientService;
 import com.epam.gym.util.SpringSecurityUtil;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,6 +20,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -47,6 +51,8 @@ class TraineeServiceTest {
 
     @Mock
     private PasswordEncoder passwordEncoder;
+    @Mock
+    private WorkloadClientService workloadClientService;
 
     @InjectMocks
     private TraineeService traineeService;
@@ -71,10 +77,32 @@ class TraineeServiceTest {
 
         assertNotNull(result);
     }
+    @Test
+    void deleteTrainee_shouldSendTrainingIdsToWorkloadService() {
 
+        Training t1 = new Training();
+        t1.setId(1L);
+
+        Training t2 = new Training();
+        t2.setId(2L);
+
+        Trainee trainee = new Trainee();
+        trainee.setTrainings(new ArrayList<>(List.of(t1, t2)));
+        trainee.setTrainers(new HashSet<>());
+
+        when(traineeRepository.findByUserUsername("john"))
+                .thenReturn(Optional.of(trainee));
+
+        traineeService.deleteTrainee("john", "Bearer token");
+
+        verify(workloadClientService)
+                .deleteWorkload(eq(List.of(1L, 2L)), eq("Bearer token"), any());
+    }
     @Test
     void deleteTrainee_shouldRemoveTraineeFromTrainers() {
+
         Trainee trainee = new Trainee();
+        trainee.setTrainings(new ArrayList<>());
 
         Trainer trainer = new Trainer();
         trainer.setTrainees(new HashSet<>());
@@ -85,12 +113,14 @@ class TraineeServiceTest {
         when(traineeRepository.findByUserUsername("john"))
                 .thenReturn(Optional.of(trainee));
 
-        traineeService.deleteTrainee("john");
+        traineeService.deleteTrainee("john", "Bearer token");
 
         assertFalse(trainer.getTrainees().contains(trainee));
         assertTrue(trainee.getTrainers().isEmpty());
 
         verify(traineeRepository).delete(trainee);
+        verify(workloadClientService)
+                .deleteWorkload(anyList(), eq("Bearer token"), any());
     }
 
     @Test
@@ -287,15 +317,17 @@ class TraineeServiceTest {
 
         Trainee trainee = new Trainee();
         trainee.setTrainers(new HashSet<>());
+        trainee.setTrainings(new ArrayList<>());
 
         when(traineeRepository.findByUserUsername("john"))
                 .thenReturn(Optional.of(trainee));
 
-        traineeService.deleteTrainee("john");
+        traineeService.deleteTrainee("john", "Bearer token");
 
         verify(traineeRepository).delete(trainee);
+        verify(workloadClientService)
+                .deleteWorkload(anyList(), eq("Bearer token"), any());
     }
-
 
     @Test
     void changeStatusTrainee_shouldDelegate() {

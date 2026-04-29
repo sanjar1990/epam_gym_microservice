@@ -3,8 +3,8 @@ POST localhost:8080/api/v1/trainer/register
 Content-Type: application/json
 
 {
-    "firstName": "John4",
-    "lastName": "Doe4",
+    "firstName": "Anna",
+    "lastName": "Khan_trainer",
     "trainingTypeId":3
  }
 

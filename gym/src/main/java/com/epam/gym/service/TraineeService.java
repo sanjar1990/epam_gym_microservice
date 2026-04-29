@@ -3,14 +3,17 @@ package com.epam.gym.service;
 import com.epam.gym.dto.*;
 import com.epam.gym.entity.Trainee;
 import com.epam.gym.entity.Trainer;
+import com.epam.gym.entity.Training;
 import com.epam.gym.entity.User;
 import com.epam.gym.enums.UserRoleEnum;
 import com.epam.gym.exceptions.UserNotFoundException;
 import com.epam.gym.mapper.trainee.TraineeMapperI;
 import com.epam.gym.mapper.trainer.TrainerMapperI;
 import com.epam.gym.repository.TraineeRepository;
+import com.epam.gym.service.clint.WorkloadClientService;
 import com.epam.gym.util.SpringSecurityUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -31,12 +34,14 @@ public class TraineeService {
     private final TraineeMapperI traineeMapperI;
     private final TrainerMapperI trainerMapperI;
     private final PasswordEncoder passwordEncoder;
+    private final WorkloadClientService workloadClientService;
+
 
     @Autowired
     public TraineeService(TraineeRepository traineeRepository, UserService userService,
                           TrainerService trainerService, TraineeMapperI traineeMapperI,
                           TrainerMapperI trainerMapperI, UserRoleService userRoleService,
-                          PasswordEncoder passwordEncoder) {
+                          PasswordEncoder passwordEncoder, WorkloadClientService workloadClientService) {
         this.traineeRepository = traineeRepository;
         this.userService = userService;
         this.trainerService = trainerService;
@@ -44,6 +49,7 @@ public class TraineeService {
         this.trainerMapperI = trainerMapperI;
         this.userRoleService = userRoleService;
         this.passwordEncoder = passwordEncoder;
+        this.workloadClientService = workloadClientService;
     }
 
     //2. Create Trainee profile.
@@ -95,8 +101,9 @@ public class TraineeService {
     //  What does boolean return type represent in this case?
 //    DONE
     @Transactional
-    public void deleteTrainee(String username) {
+    public void deleteTrainee(String username,String token) {
         Trainee trainee = getTrainee(username);
+        List<Long> trainingIdList = trainee.getTrainings().stream().map(Training::getId).toList();
         for (Trainer trainer : trainee.getTrainers()) {
             trainer.getTrainees().remove(trainee);
         }
@@ -104,6 +111,7 @@ public class TraineeService {
         trainee.getTrainers().clear();
         log.info("Trainee deleted{}", trainee.getId());
         traineeRepository.delete(trainee);
+        workloadClientService.deleteWorkload(trainingIdList, token, MDC.get("transactionId"));
 
     }
 

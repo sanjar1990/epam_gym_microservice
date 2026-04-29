@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-04-29T13:56:41.850Z",
+  "status": 405,
+  "error": "Method Not Allowed",
+  "path": "/api/v1/workload"
+}

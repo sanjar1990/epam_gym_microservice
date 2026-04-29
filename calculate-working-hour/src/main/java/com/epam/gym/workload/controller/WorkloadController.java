@@ -2,11 +2,13 @@ package com.epam.gym.workload.controller;
 
 import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.dto.TrainerWorkloadSummeryResponse;
+import com.epam.gym.workload.dto.WorkloadCalculateRequestDTO;
 import com.epam.gym.workload.service.WorkloadService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/workload")
@@ -21,12 +23,17 @@ public class WorkloadController {
         workloadService.calculateWorkingHours(request);
     }
 
-    @GetMapping("/{username}")
+    @GetMapping
     public TrainerWorkloadSummeryResponse getMonthlyHours(
-            @PathVariable String username,
-            @RequestParam int year,
-            @RequestParam int month) {
+            @RequestBody WorkloadCalculateRequestDTO dto) {
 
-        return workloadService.getWorkload(username, year, month);
+        return workloadService.getWorkload(dto);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteWorkload(@Valid @RequestBody List<Long> trainingIdList) {
+
+        workloadService.deleteWorkload(trainingIdList);
     }
 }

@@ -46,7 +46,8 @@ public class TrainingController {
     @PostMapping()
     @Operation(summary = " 14 Add Training", description = "")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Long> addTraining(@Valid @RequestBody CreateTrainingDTO dto, @RequestHeader("Authorization") String token) {
+    public ResponseEntity<Long> addTraining(@Valid @RequestBody CreateTrainingDTO dto,
+                                            @RequestHeader("Authorization") String token) {
         return ResponseEntity.ok(trainingService.addTraining(dto, token));
     }
 

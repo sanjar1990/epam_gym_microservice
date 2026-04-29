@@ -4,8 +4,8 @@ POST localhost:8080/api/v1/auth/login
 Content-Type: application/json
 
 {
-    "username": "John4.Doe4",
-    "password": "Y3b1SqbrhZ"
+    "username": "Anna.Khan_trainer",
+    "password": "5ZGyBsyFMz"
  }
 
 #####    4. Change Login (PUT method)
