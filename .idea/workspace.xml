@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4146370-e12a-4f58-9b76-873805fe33f6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_G:/PROGRAMMING/Java Projects/epam_gym" value="3CzOWZpEg8Ylc74kTf70ayzJHTx" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3CzOWZpEg8Ylc74kTf70ayzJHTx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.auth | //    3. Login (GET method).executor": "Run",
+    "HTTP Request.trainer | #1.executor": "Run",
+    "HTTP Request.training | 14. Add Training (POST method).executor": "Run",
+    "HTTP Request.training | Delete Training (DELETE method).executor": "Run",
+    "JUnit.TrainingServiceTest.executor": "Run",
+    "Maven.workload [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.EurekaserverApplication.executor": "Run",
+    "Spring Boot.GymApplication.executor": "Run",
+    "Spring Boot.WorkloadApplication.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.training | Delete Training (DELETE method)">
+    <configuration name="auth | //    3. Login (GET method)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gym/src/main/resources/http/auth.http" executionIdentifier="//    3. Login (GET method)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="trainer | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gym/src/main/resources/http/trainer.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="training | 14. Add Training (POST method)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gym/src/main/resources/http/training.http" executionIdentifier="14. Add Training (POST method)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="training | Delete Training (DELETE method)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/gym/src/main/resources/http/training.http" executionIdentifier="Delete Training (DELETE method)" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="GymApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/gym/.env" />
+      </option>
+      <module name="gym" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.gym.GymApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.gym.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkloadApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="workload" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.gym.workload.WorkloadApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.auth | //    3. Login (GET method)" />
+      <item itemvalue="HTTP Request.trainer | #1" />
+      <item itemvalue="HTTP Request.training | 14. Add Training (POST method)" />
+      <item itemvalue="HTTP Request.training | Delete Training (DELETE method)" />
+      <item itemvalue="Spring Boot.GymApplication" />
+      <item itemvalue="Spring Boot.WorkloadApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.training | Delete Training (DELETE method)" />
+        <item itemvalue="HTTP Request.training | 14. Add Training (POST method)" />
+        <item itemvalue="HTTP Request.auth | //    3. Login (GET method)" />
+        <item itemvalue="HTTP Request.trainer | #1" />
+        <item itemvalue="Spring Boot.GymApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4146370-e12a-4f58-9b76-873805fe33f6" name="Changes" comment="" />
+      <created>1777384964946</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777384964946</updated>
+      <workItem from="1777384977370" duration="1196000" />
+      <workItem from="1777459363875" duration="7590000" />
+      <workItem from="1777466990459" duration="23000" />
+      <workItem from="1777467056461" duration="24000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/controller/WorkloadController.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/filter/JwtFilter.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gym/src/main/java/com/epam/gym/service/TrainingService.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

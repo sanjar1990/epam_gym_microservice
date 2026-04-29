@@ -1,0 +1,57 @@
+    //1. Trainee Registration (POST method)
+POST localhost:8080/api/v1/trainee/register
+Content-Type: application/json
+
+{
+  "firstName": "Alex",
+  "lastName": "Millerov",
+  "dateOfBirth": "1993-01-01",
+  "address": "Russia ganamgu"
+  }
+
+#### 5. Get Trainee Profile (GET method)
+
+GET localhost:8080/api/v1/trainee
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORUUiXSwic3ViIjoiQW5uLk1pbGxlciIsImlhdCI6MTc3NTMwNTg1NiwiZXhwIjoxNzc1NTY1MDU2fQ.OSNj2T0KxbpPRsO5E7RCUMDlLj9cABZAkHP04W2i3ZjAHub1L189JjzvSWPzSlJl
+
+
+#### 6. Update Trainee Profile (PUT method)
+
+PUT localhost:8080/api/v1/trainee
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORUUiXSwic3ViIjoiQW5uLk1pbGxlciIsImlhdCI6MTc3NTMwNTg1NiwiZXhwIjoxNzc1NTY1MDU2fQ.OSNj2T0KxbpPRsO5E7RCUMDlLj9cABZAkHP04W2i3ZjAHub1L189JjzvSWPzSlJl
+Content-Type: application/json
+
+
+{
+  "firstName": "SanjarUpdated",
+  "lastName": "Niyazov_updated",
+  "dateOfBirth": "1990-01-01",
+  "address": "Seoul ganamgu updated" ,
+  "isActive": true
+  }
+
+#### 7. Delete Trainee Profile (DELETE method)
+
+DELETE localhost:8080/api/v1/trainee?username=Trainee1.Miller
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+
+### 11. Update Trainee's Trainer List (PUT method)
+
+PUT localhost:8080/api/v1/trainee/Trainee1.Miller/trainers
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+
+{
+  "trainerUsernames": ["Ali_ADMIN.Aliyev_trainer","Ali_ADMIN2.Aliyev_trainer2"]
+
+  }
+
+### 15. Activate/De-Activate Trainee (PATCH method)
+PATCH localhost:8080/api/v1/trainee/active
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+
+{
+  "username": "Trainee1.Miller",
+  "isActive": true
+  }

@@ -1,0 +1,43 @@
+HELP.md
+logs/
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+/.env
+
+/tasks/Task_Hibernate.pdf
+/tasks/Task_Rest.pdf
+/tasks/Task_Spring_Core.pdf
+/src/main/resources/application-local.properties
+/tasks/Task_Spring_Boot.pdf
+/tasks/Task_Spring_Security.pdf
+/tasks/Task_Microservices.pdf

@@ -1,0 +1,37 @@
+### 14. Add Training (POST method)
+
+POST localhost:8080/api/v1/training
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkpvaG40LkRvZTQiLCJpYXQiOjE3Nzc0NjYyNjAsImV4cCI6MTc3NzcyNTQ2MH0.TmValQXksUDjpFwkKD_Ov_ojkscKwVraLEaUMuRZhNI7uZubMUhKmpoZKGPrqaL5
+Content-Type: application/json
+
+{
+  "traineeUsername": "Alex.Millerov",
+  "trainingDate": "2026-04-30",
+  "trainingDuration": 50,
+  "trainingTypeId": 3
+}
+
+### 12. Get Trainee Trainings List (GET method)
+
+POST localhost:8080/api/v1/training/trainee
+Content-Type: application/json
+
+{
+  "traineeUsername": "Ann.Miller",
+  "trainerName": "Ali.Aliyev_trainer"
+}
+
+### 13. Get Trainer Trainings List (GET method)
+
+POST localhost:8080/api/v1/training/trainer
+Content-Type: application/json
+
+{
+  "trainerUsername": "Ali.Aliyev_trainer"
+}
+
+#### Delete Training (DELETE method)
+DELETE localhost:8080/api/v1/training/161
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkpvaG4zLkRvZTMiLCJpYXQiOjE3NzczNzA5NzIsImV4cCI6MTc3NzYzMDE3Mn0.ZMv4ipN1iVPEl4-MBetHpJ1x3wbKuXDnNCOO5um-IdtVB0VSZwmLQNG-nkLpOMTP
+
+

@@ -1,0 +1,1046 @@
+29 Apr 2026 - 19:44:02.714 - com.epam.gym.GymApplication - INFO  - [] Starting GymApplication using Java 23 with PID 6712 (G:\PROGRAMMING\Java Projects\epam_gym\gym\target\classes started by Sanjar in G:\PROGRAMMING\Java Projects\epam_gym)
+29 Apr 2026 - 19:44:02.732 - com.epam.gym.GymApplication - INFO  - [] The following 1 profile is active: "dev"
+29 Apr 2026 - 19:44:04.970 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29 Apr 2026 - 19:44:05.129 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Finished Spring Data repository scanning in 150 ms. Found 6 JPA repository interfaces.
+29 Apr 2026 - 19:44:05.629 - o.s.cloud.context.scope.GenericScope - INFO  - [] BeanFactory id=403bb2c8-628f-3139-97fa-7311fd0ed101
+29 Apr 2026 - 19:44:06.491 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat initialized with port 8080 (http)
+29 Apr 2026 - 19:44:06.504 - o.a.catalina.core.StandardService - INFO  - [] Starting service [Tomcat]
+29 Apr 2026 - 19:44:06.504 - o.a.catalina.core.StandardEngine - INFO  - [] Starting Servlet engine: [Apache Tomcat/11.0.20]
+29 Apr 2026 - 19:44:06.560 - o.s.b.w.c.s.WebApplicationContextInitializer - INFO  - [] Root WebApplicationContext: initialization completed in 3741 ms
+29 Apr 2026 - 19:44:07.149 - org.hibernate.orm.jpa - INFO  - [] HHH008540: Processing PersistenceUnitInfo [name: default]
+29 Apr 2026 - 19:44:07.199 - org.hibernate.orm.core - INFO  - [] HHH000001: Hibernate ORM core version 7.2.7.Final
+29 Apr 2026 - 19:44:07.634 - o.s.o.j.p.SpringPersistenceUnitInfo - INFO  - [] No LoadTimeWeaver setup: ignoring JPA class transformer
+29 Apr 2026 - 19:44:07.665 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Starting...
+29 Apr 2026 - 19:44:09.759 - com.zaxxer.hikari.pool.HikariPool - INFO  - [] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66694050
+29 Apr 2026 - 19:44:09.761 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Start completed.
+29 Apr 2026 - 19:44:10.993 - o.hibernate.orm.connections.pooling - INFO  - [] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: gymdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+29 Apr 2026 - 19:44:12.006 - org.hibernate.orm.core - INFO  - [] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+29 Apr 2026 - 19:44:14.204 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Initialized JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 19:44:14.391 - o.s.d.j.r.q.QueryEnhancerFactories - INFO  - [] Hibernate is in classpath; If applicable, HQL parser will be used.
+29 Apr 2026 - 19:44:15.145 - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - WARN  - [] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29 Apr 2026 - 19:44:16.533 - o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - INFO  - [] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+29 Apr 2026 - 19:44:16.534 - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - WARN  - [] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+29 Apr 2026 - 19:44:19.608 - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - INFO  - [] Eureka HTTP Client uses RestClient.
+29 Apr 2026 - 19:44:19.715 - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - WARN  - [] Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+29 Apr 2026 - 19:44:19.745 - o.s.b.a.e.web.EndpointLinksResolver - INFO  - [] Exposing 28 endpoints beneath base path '/actuator'
+29 Apr 2026 - 19:44:19.899 - o.s.c.n.eureka.InstanceInfoFactory - INFO  - [] Setting initial instance status as: STARTING
+29 Apr 2026 - 19:44:19.928 - c.netflix.discovery.DiscoveryClient - INFO  - [] Initializing Eureka in region us-east-1
+29 Apr 2026 - 19:44:19.933 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 19:44:19.941 - c.netflix.discovery.DiscoveryClient - INFO  - [] Disable delta property : false
+29 Apr 2026 - 19:44:19.942 - c.netflix.discovery.DiscoveryClient - INFO  - [] Single vip registry refresh property : null
+29 Apr 2026 - 19:44:19.942 - c.netflix.discovery.DiscoveryClient - INFO  - [] Force full registry fetch : false
+29 Apr 2026 - 19:44:19.942 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application is null : false
+29 Apr 2026 - 19:44:19.942 - c.netflix.discovery.DiscoveryClient - INFO  - [] Registered Applications size is zero : true
+29 Apr 2026 - 19:44:19.942 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application version is -1: true
+29 Apr 2026 - 19:44:19.942 - c.netflix.discovery.DiscoveryClient - INFO  - [] Getting all instance registry info from the eureka server
+29 Apr 2026 - 19:44:20.299 - c.netflix.discovery.DiscoveryClient - INFO  - [] The response status is 200
+29 Apr 2026 - 19:44:20.300 - c.netflix.discovery.DiscoveryClient - INFO  - [] Starting heartbeat executor: renew interval is: 30
+29 Apr 2026 - 19:44:20.303 - c.n.discovery.InstanceInfoReplicator - INFO  - [] InstanceInfoReplicator onDemand update allowed rate per min is 4
+29 Apr 2026 - 19:44:20.306 - c.netflix.discovery.DiscoveryClient - INFO  - [] Discovery Client initialized at timestamp 1777459460305 with initial instances count: 0
+29 Apr 2026 - 19:44:20.330 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Registering application GYM-MAIN-SERVICE with eureka with status UP
+29 Apr 2026 - 19:44:20.330 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777459460330, current=UP, previous=STARTING]
+29 Apr 2026 - 19:44:20.332 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 19:44:20.350 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat started on port 8080 (http) with context path '/'
+29 Apr 2026 - 19:44:20.352 - o.s.c.n.e.s.EurekaAutoServiceRegistration - INFO  - [] Updating port to 8080
+29 Apr 2026 - 19:44:20.370 - com.epam.gym.GymApplication - INFO  - [] Started GymApplication in 18.348 seconds (process running for 19.871)
+29 Apr 2026 - 19:44:20.379 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 19:44:20.850 - org.flywaydb.core.FlywayExecutor - INFO  - [] Database: jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require (PostgreSQL 17.8)
+29 Apr 2026 - 19:44:23.476 - o.f.core.internal.command.DbValidate - INFO  - [] Successfully validated 3 migrations (execution time 00:00.820s)
+29 Apr 2026 - 19:44:26.016 - o.f.core.internal.command.DbMigrate - INFO  - [] Current version of schema "public": 2
+29 Apr 2026 - 19:44:26.207 - o.f.core.internal.command.DbMigrate - INFO  - [] Schema "public" is up to date. No migration necessary.
+29 Apr 2026 - 19:44:27.353 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+29 Apr 2026 - 19:44:27.353 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+29 Apr 2026 - 19:44:27.623 - o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  - [] Initializing Spring DispatcherServlet 'dispatcherServlet'
+29 Apr 2026 - 19:44:27.623 - o.s.web.servlet.DispatcherServlet - INFO  - [] Initializing Servlet 'dispatcherServlet'
+29 Apr 2026 - 19:44:27.628 - o.s.web.servlet.DispatcherServlet - INFO  - [] Completed initialization in 4 ms
+29 Apr 2026 - 19:44:27.722 - c.epam.gym.filter.TransactionFilter - INFO  - [26b2f90e-c572-4dc2-a567-6e3dafcb9650] [TRANSACTION START] GET /api/v1/training-type
+29 Apr 2026 - 19:44:27.723 - c.epam.gym.filter.TransactionFilter - INFO  - [26b2f90e-c572-4dc2-a567-6e3dafcb9650] [TRANSACTION ID] 26b2f90e-c572-4dc2-a567-6e3dafcb9650
+29 Apr 2026 - 19:44:28.421 - c.epam.gym.filter.TransactionFilter - INFO  - [26b2f90e-c572-4dc2-a567-6e3dafcb9650] [TRANSACTION END] GET /api/v1/training-type | status=200 | time=698ms
+29 Apr 2026 - 19:44:42.114 - c.epam.gym.filter.TransactionFilter - INFO  - [1d2b538f-b177-4315-ab35-082340ae5906] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 19:44:42.114 - c.epam.gym.filter.TransactionFilter - INFO  - [1d2b538f-b177-4315-ab35-082340ae5906] [TRANSACTION ID] 1d2b538f-b177-4315-ab35-082340ae5906
+29 Apr 2026 - 19:44:43.806 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [1d2b538f-b177-4315-ab35-082340ae5906] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 19:44:43.806 - c.epam.gym.service.TrainingService - INFO  - [1d2b538f-b177-4315-ab35-082340ae5906] Training added 142
+29 Apr 2026 - 19:44:44.001 - c.epam.gym.filter.TransactionFilter - INFO  - [1d2b538f-b177-4315-ab35-082340ae5906] [TRANSACTION END] POST /api/v1/training | status=200 | time=1887ms
+29 Apr 2026 - 19:44:50.307 - c.netflix.discovery.DiscoveryClient - INFO  - [] Disable delta property : false
+29 Apr 2026 - 19:44:50.307 - c.netflix.discovery.DiscoveryClient - INFO  - [] Single vip registry refresh property : null
+29 Apr 2026 - 19:44:50.307 - c.netflix.discovery.DiscoveryClient - INFO  - [] Force full registry fetch : false
+29 Apr 2026 - 19:44:50.307 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application is null : false
+29 Apr 2026 - 19:44:50.307 - c.netflix.discovery.DiscoveryClient - INFO  - [] Registered Applications size is zero : true
+29 Apr 2026 - 19:44:50.307 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application version is -1: false
+29 Apr 2026 - 19:44:50.307 - c.netflix.discovery.DiscoveryClient - INFO  - [] Getting all instance registry info from the eureka server
+29 Apr 2026 - 19:44:50.334 - c.netflix.discovery.DiscoveryClient - INFO  - [] The response status is 200
+29 Apr 2026 - 19:47:49.050 - c.epam.gym.filter.TransactionFilter - INFO  - [4f65dda7-5f77-4b07-bb46-b354a0f1fbf3] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 19:47:49.050 - c.epam.gym.filter.TransactionFilter - INFO  - [4f65dda7-5f77-4b07-bb46-b354a0f1fbf3] [TRANSACTION ID] 4f65dda7-5f77-4b07-bb46-b354a0f1fbf3
+29 Apr 2026 - 19:47:51.408 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [4f65dda7-5f77-4b07-bb46-b354a0f1fbf3] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 19:47:51.409 - c.epam.gym.service.TrainingService - INFO  - [4f65dda7-5f77-4b07-bb46-b354a0f1fbf3] Training added 143
+29 Apr 2026 - 19:47:51.600 - c.epam.gym.filter.TransactionFilter - INFO  - [4f65dda7-5f77-4b07-bb46-b354a0f1fbf3] [TRANSACTION END] POST /api/v1/training | status=200 | time=2550ms
+29 Apr 2026 - 19:49:19.945 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 19:51:28.437 - c.epam.gym.filter.TransactionFilter - INFO  - [f19bb8d1-f219-4626-9345-cd2b1fda0007] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 19:51:28.437 - c.epam.gym.filter.TransactionFilter - INFO  - [f19bb8d1-f219-4626-9345-cd2b1fda0007] [TRANSACTION ID] f19bb8d1-f219-4626-9345-cd2b1fda0007
+29 Apr 2026 - 19:51:30.131 - c.epam.gym.service.TrainingService - INFO  - [f19bb8d1-f219-4626-9345-cd2b1fda0007] Training added 144
+29 Apr 2026 - 19:51:30.323 - c.epam.gym.filter.TransactionFilter - INFO  - [f19bb8d1-f219-4626-9345-cd2b1fda0007] [TRANSACTION END] POST /api/v1/training | status=200 | time=1886ms
+29 Apr 2026 - 19:52:09.370 - c.epam.gym.filter.TransactionFilter - INFO  - [41e6cedf-9be1-4ecb-ba53-8080b933f75c] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 19:52:09.370 - c.epam.gym.filter.TransactionFilter - INFO  - [41e6cedf-9be1-4ecb-ba53-8080b933f75c] [TRANSACTION ID] 41e6cedf-9be1-4ecb-ba53-8080b933f75c
+29 Apr 2026 - 19:52:10.755 - c.epam.gym.service.TrainingService - INFO  - [41e6cedf-9be1-4ecb-ba53-8080b933f75c] Training added 145
+29 Apr 2026 - 19:52:10.947 - c.epam.gym.filter.TransactionFilter - INFO  - [41e6cedf-9be1-4ecb-ba53-8080b933f75c] [TRANSACTION END] POST /api/v1/training | status=200 | time=1577ms
+29 Apr 2026 - 19:54:19.959 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 19:59:19.971 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:04:19.974 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:05:38.260 - c.epam.gym.filter.TransactionFilter - INFO  - [a234da74-1dfb-479a-894b-7fa5898b9922] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:05:38.260 - c.epam.gym.filter.TransactionFilter - INFO  - [a234da74-1dfb-479a-894b-7fa5898b9922] [TRANSACTION ID] a234da74-1dfb-479a-894b-7fa5898b9922
+29 Apr 2026 - 20:05:40.057 - c.epam.gym.service.TrainingService - INFO  - [a234da74-1dfb-479a-894b-7fa5898b9922] Training added 146
+29 Apr 2026 - 20:05:40.259 - c.epam.gym.filter.TransactionFilter - INFO  - [a234da74-1dfb-479a-894b-7fa5898b9922] [TRANSACTION END] POST /api/v1/training | status=200 | time=2000ms
+29 Apr 2026 - 20:06:02.516 - c.epam.gym.filter.TransactionFilter - INFO  - [71379561-17aa-4ba8-8bc5-044472a52013] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:06:02.517 - c.epam.gym.filter.TransactionFilter - INFO  - [71379561-17aa-4ba8-8bc5-044472a52013] [TRANSACTION ID] 71379561-17aa-4ba8-8bc5-044472a52013
+29 Apr 2026 - 20:06:03.972 - c.epam.gym.service.TrainingService - INFO  - [71379561-17aa-4ba8-8bc5-044472a52013] Training added 147
+29 Apr 2026 - 20:06:04.188 - c.epam.gym.filter.TransactionFilter - INFO  - [71379561-17aa-4ba8-8bc5-044472a52013] [TRANSACTION END] POST /api/v1/training | status=200 | time=1672ms
+29 Apr 2026 - 20:09:19.978 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:11:12.689 - c.epam.gym.filter.TransactionFilter - INFO  - [ecdf0fdf-8129-48db-8cb6-f79b1b8fa11e] [TRANSACTION START] DELETE /api/v1/training/2
+29 Apr 2026 - 20:11:12.689 - c.epam.gym.filter.TransactionFilter - INFO  - [ecdf0fdf-8129-48db-8cb6-f79b1b8fa11e] [TRANSACTION ID] ecdf0fdf-8129-48db-8cb6-f79b1b8fa11e
+29 Apr 2026 - 20:11:13.103 - c.e.g.e.handler.APIExceptionHandler - ERROR - [ecdf0fdf-8129-48db-8cb6-f79b1b8fa11e] Training not found
+29 Apr 2026 - 20:11:13.105 - c.epam.gym.filter.TransactionFilter - INFO  - [ecdf0fdf-8129-48db-8cb6-f79b1b8fa11e] [TRANSACTION END] DELETE /api/v1/training/2 | status=400 | time=416ms
+29 Apr 2026 - 20:12:18.369 - c.epam.gym.filter.TransactionFilter - INFO  - [2ca4364f-b900-4323-bd9a-03a667866aa2] [TRANSACTION START] DELETE /api/v1/training/3
+29 Apr 2026 - 20:12:18.370 - c.epam.gym.filter.TransactionFilter - INFO  - [2ca4364f-b900-4323-bd9a-03a667866aa2] [TRANSACTION ID] 2ca4364f-b900-4323-bd9a-03a667866aa2
+29 Apr 2026 - 20:12:19.190 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [2ca4364f-b900-4323-bd9a-03a667866aa2] Workload service is DOWN. Fallback triggered for user: Ali_ADMIN.Aliyev_trainer
+29 Apr 2026 - 20:12:19.190 - c.epam.gym.service.TrainingService - INFO  - [2ca4364f-b900-4323-bd9a-03a667866aa2] Training deleted 3
+29 Apr 2026 - 20:12:19.605 - c.epam.gym.filter.TransactionFilter - INFO  - [2ca4364f-b900-4323-bd9a-03a667866aa2] [TRANSACTION END] DELETE /api/v1/training/3 | status=200 | time=1236ms
+29 Apr 2026 - 20:13:12.554 - c.epam.gym.filter.TransactionFilter - INFO  - [65227733-0b2b-4786-adb2-7b843318f7c7] [TRANSACTION START] DELETE /api/v1/training/52
+29 Apr 2026 - 20:13:12.554 - c.epam.gym.filter.TransactionFilter - INFO  - [65227733-0b2b-4786-adb2-7b843318f7c7] [TRANSACTION ID] 65227733-0b2b-4786-adb2-7b843318f7c7
+29 Apr 2026 - 20:13:12.970 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [65227733-0b2b-4786-adb2-7b843318f7c7] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:13:12.970 - c.epam.gym.service.TrainingService - INFO  - [65227733-0b2b-4786-adb2-7b843318f7c7] Training deleted 52
+29 Apr 2026 - 20:13:13.368 - c.epam.gym.filter.TransactionFilter - INFO  - [65227733-0b2b-4786-adb2-7b843318f7c7] [TRANSACTION END] DELETE /api/v1/training/52 | status=200 | time=814ms
+29 Apr 2026 - 20:14:08.356 - c.epam.gym.filter.TransactionFilter - INFO  - [53d58e4f-0967-483f-bea5-2a1293711795] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:14:08.356 - c.epam.gym.filter.TransactionFilter - INFO  - [53d58e4f-0967-483f-bea5-2a1293711795] [TRANSACTION ID] 53d58e4f-0967-483f-bea5-2a1293711795
+29 Apr 2026 - 20:14:09.763 - c.epam.gym.service.TrainingService - INFO  - [53d58e4f-0967-483f-bea5-2a1293711795] Training added 148
+29 Apr 2026 - 20:14:09.948 - c.epam.gym.filter.TransactionFilter - INFO  - [53d58e4f-0967-483f-bea5-2a1293711795] [TRANSACTION END] POST /api/v1/training | status=200 | time=1592ms
+29 Apr 2026 - 20:14:19.991 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:14:56.035 - c.epam.gym.filter.TransactionFilter - INFO  - [10e3cb75-f463-454a-9b61-d0b6ac30b3c9] [TRANSACTION START] DELETE /api/v1/training/52
+29 Apr 2026 - 20:14:56.035 - c.epam.gym.filter.TransactionFilter - INFO  - [10e3cb75-f463-454a-9b61-d0b6ac30b3c9] [TRANSACTION ID] 10e3cb75-f463-454a-9b61-d0b6ac30b3c9
+29 Apr 2026 - 20:14:56.406 - c.e.g.e.handler.APIExceptionHandler - ERROR - [10e3cb75-f463-454a-9b61-d0b6ac30b3c9] Training not found
+29 Apr 2026 - 20:14:56.406 - c.epam.gym.filter.TransactionFilter - INFO  - [10e3cb75-f463-454a-9b61-d0b6ac30b3c9] [TRANSACTION END] DELETE /api/v1/training/52 | status=400 | time=371ms
+29 Apr 2026 - 20:17:58.450 - c.epam.gym.filter.TransactionFilter - INFO  - [25c6bbf4-984f-4261-938f-1231d6dfe293] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:17:58.451 - c.epam.gym.filter.TransactionFilter - INFO  - [25c6bbf4-984f-4261-938f-1231d6dfe293] [TRANSACTION ID] 25c6bbf4-984f-4261-938f-1231d6dfe293
+29 Apr 2026 - 20:17:59.831 - c.epam.gym.service.TrainingService - INFO  - [25c6bbf4-984f-4261-938f-1231d6dfe293] Training added 149
+29 Apr 2026 - 20:18:00.020 - c.epam.gym.filter.TransactionFilter - INFO  - [25c6bbf4-984f-4261-938f-1231d6dfe293] [TRANSACTION END] POST /api/v1/training | status=200 | time=1570ms
+29 Apr 2026 - 20:19:19.995 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:20:43.506 - c.epam.gym.filter.TransactionFilter - INFO  - [eefef072-62b4-450e-ac79-61488faf5de2] [TRANSACTION START] DELETE /api/v1/training/149
+29 Apr 2026 - 20:20:43.507 - c.epam.gym.filter.TransactionFilter - INFO  - [eefef072-62b4-450e-ac79-61488faf5de2] [TRANSACTION ID] eefef072-62b4-450e-ac79-61488faf5de2
+29 Apr 2026 - 20:20:43.896 - c.epam.gym.service.TrainingService - INFO  - [eefef072-62b4-450e-ac79-61488faf5de2] Training deleted 149
+29 Apr 2026 - 20:20:44.270 - c.epam.gym.filter.TransactionFilter - INFO  - [eefef072-62b4-450e-ac79-61488faf5de2] [TRANSACTION END] DELETE /api/v1/training/149 | status=200 | time=764ms
+29 Apr 2026 - 20:21:24.672 - c.epam.gym.filter.TransactionFilter - INFO  - [92f2f083-925f-48b2-9fed-0f8cbc8def4a] [TRANSACTION START] DELETE /api/v1/training/149
+29 Apr 2026 - 20:21:24.672 - c.epam.gym.filter.TransactionFilter - INFO  - [92f2f083-925f-48b2-9fed-0f8cbc8def4a] [TRANSACTION ID] 92f2f083-925f-48b2-9fed-0f8cbc8def4a
+29 Apr 2026 - 20:21:25.045 - c.e.g.e.handler.APIExceptionHandler - ERROR - [92f2f083-925f-48b2-9fed-0f8cbc8def4a] Training not found
+29 Apr 2026 - 20:21:25.046 - c.epam.gym.filter.TransactionFilter - INFO  - [92f2f083-925f-48b2-9fed-0f8cbc8def4a] [TRANSACTION END] DELETE /api/v1/training/149 | status=400 | time=375ms
+29 Apr 2026 - 20:24:20.001 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:29:20.005 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:29:35.224 - c.epam.gym.filter.TransactionFilter - INFO  - [a3329be6-6f3f-49c7-bc03-cf173f715507] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:29:35.225 - c.epam.gym.filter.TransactionFilter - INFO  - [a3329be6-6f3f-49c7-bc03-cf173f715507] [TRANSACTION ID] a3329be6-6f3f-49c7-bc03-cf173f715507
+29 Apr 2026 - 20:29:36.904 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [a3329be6-6f3f-49c7-bc03-cf173f715507] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:29:36.904 - c.epam.gym.service.TrainingService - INFO  - [a3329be6-6f3f-49c7-bc03-cf173f715507] Training added 150
+29 Apr 2026 - 20:29:37.098 - c.epam.gym.filter.TransactionFilter - INFO  - [a3329be6-6f3f-49c7-bc03-cf173f715507] [TRANSACTION END] POST /api/v1/training | status=200 | time=1874ms
+29 Apr 2026 - 20:31:13.034 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Unregistering application GYM-MAIN-SERVICE with eureka with status DOWN
+29 Apr 2026 - 20:31:13.035 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777462273035, current=DOWN, previous=UP]
+29 Apr 2026 - 20:31:13.035 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 20:31:13.050 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 20:31:13.055 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Commencing graceful shutdown. Waiting for active requests to complete
+29 Apr 2026 - 20:31:13.064 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Graceful shutdown complete
+29 Apr 2026 - 20:31:13.086 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Closing JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 20:31:13.093 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown initiated...
+29 Apr 2026 - 20:31:14.964 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown completed.
+29 Apr 2026 - 20:31:14.966 - c.netflix.discovery.DiscoveryClient - INFO  - [] Shutting down DiscoveryClient ...
+29 Apr 2026 - 20:31:17.969 - c.netflix.discovery.DiscoveryClient - INFO  - [] Unregistering ...
+29 Apr 2026 - 20:31:17.987 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - deregister  status: 200
+29 Apr 2026 - 20:31:17.988 - c.netflix.discovery.DiscoveryClient - INFO  - [] Completed shut down of DiscoveryClient
+29 Apr 2026 - 20:31:25.182 - com.epam.gym.GymApplication - INFO  - [] Starting GymApplication using Java 23 with PID 1008 (G:\PROGRAMMING\Java Projects\epam_gym\gym\target\classes started by Sanjar in G:\PROGRAMMING\Java Projects\epam_gym)
+29 Apr 2026 - 20:31:25.195 - com.epam.gym.GymApplication - INFO  - [] The following 1 profile is active: "dev"
+29 Apr 2026 - 20:31:26.502 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29 Apr 2026 - 20:31:26.667 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Finished Spring Data repository scanning in 156 ms. Found 6 JPA repository interfaces.
+29 Apr 2026 - 20:31:27.149 - o.s.cloud.context.scope.GenericScope - INFO  - [] BeanFactory id=403bb2c8-628f-3139-97fa-7311fd0ed101
+29 Apr 2026 - 20:31:27.947 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat initialized with port 8080 (http)
+29 Apr 2026 - 20:31:27.959 - o.a.catalina.core.StandardService - INFO  - [] Starting service [Tomcat]
+29 Apr 2026 - 20:31:27.959 - o.a.catalina.core.StandardEngine - INFO  - [] Starting Servlet engine: [Apache Tomcat/11.0.20]
+29 Apr 2026 - 20:31:28.013 - o.s.b.w.c.s.WebApplicationContextInitializer - INFO  - [] Root WebApplicationContext: initialization completed in 2767 ms
+29 Apr 2026 - 20:31:28.604 - org.hibernate.orm.jpa - INFO  - [] HHH008540: Processing PersistenceUnitInfo [name: default]
+29 Apr 2026 - 20:31:28.652 - org.hibernate.orm.core - INFO  - [] HHH000001: Hibernate ORM core version 7.2.7.Final
+29 Apr 2026 - 20:31:29.094 - o.s.o.j.p.SpringPersistenceUnitInfo - INFO  - [] No LoadTimeWeaver setup: ignoring JPA class transformer
+29 Apr 2026 - 20:31:29.123 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Starting...
+29 Apr 2026 - 20:31:31.299 - com.zaxxer.hikari.pool.HikariPool - INFO  - [] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58a5b69c
+29 Apr 2026 - 20:31:31.301 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Start completed.
+29 Apr 2026 - 20:31:32.550 - o.hibernate.orm.connections.pooling - INFO  - [] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: gymdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+29 Apr 2026 - 20:31:33.620 - org.hibernate.orm.core - INFO  - [] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+29 Apr 2026 - 20:31:35.878 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Initialized JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 20:31:36.068 - o.s.d.j.r.q.QueryEnhancerFactories - INFO  - [] Hibernate is in classpath; If applicable, HQL parser will be used.
+29 Apr 2026 - 20:31:36.817 - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - WARN  - [] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29 Apr 2026 - 20:31:38.130 - o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - INFO  - [] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+29 Apr 2026 - 20:31:38.131 - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - WARN  - [] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+29 Apr 2026 - 20:31:41.214 - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - INFO  - [] Eureka HTTP Client uses RestClient.
+29 Apr 2026 - 20:31:41.317 - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - WARN  - [] Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+29 Apr 2026 - 20:31:41.349 - o.s.b.a.e.web.EndpointLinksResolver - INFO  - [] Exposing 28 endpoints beneath base path '/actuator'
+29 Apr 2026 - 20:31:41.491 - o.s.c.n.eureka.InstanceInfoFactory - INFO  - [] Setting initial instance status as: STARTING
+29 Apr 2026 - 20:31:41.520 - c.netflix.discovery.DiscoveryClient - INFO  - [] Initializing Eureka in region us-east-1
+29 Apr 2026 - 20:31:41.524 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:31:41.533 - c.netflix.discovery.DiscoveryClient - INFO  - [] Disable delta property : false
+29 Apr 2026 - 20:31:41.533 - c.netflix.discovery.DiscoveryClient - INFO  - [] Single vip registry refresh property : null
+29 Apr 2026 - 20:31:41.533 - c.netflix.discovery.DiscoveryClient - INFO  - [] Force full registry fetch : false
+29 Apr 2026 - 20:31:41.533 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application is null : false
+29 Apr 2026 - 20:31:41.533 - c.netflix.discovery.DiscoveryClient - INFO  - [] Registered Applications size is zero : true
+29 Apr 2026 - 20:31:41.533 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application version is -1: true
+29 Apr 2026 - 20:31:41.533 - c.netflix.discovery.DiscoveryClient - INFO  - [] Getting all instance registry info from the eureka server
+29 Apr 2026 - 20:31:41.892 - c.netflix.discovery.DiscoveryClient - INFO  - [] The response status is 200
+29 Apr 2026 - 20:31:41.894 - c.netflix.discovery.DiscoveryClient - INFO  - [] Starting heartbeat executor: renew interval is: 30
+29 Apr 2026 - 20:31:41.895 - c.n.discovery.InstanceInfoReplicator - INFO  - [] InstanceInfoReplicator onDemand update allowed rate per min is 4
+29 Apr 2026 - 20:31:41.897 - c.netflix.discovery.DiscoveryClient - INFO  - [] Discovery Client initialized at timestamp 1777462301896 with initial instances count: 1
+29 Apr 2026 - 20:31:41.917 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Registering application GYM-MAIN-SERVICE with eureka with status UP
+29 Apr 2026 - 20:31:41.918 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777462301918, current=UP, previous=STARTING]
+29 Apr 2026 - 20:31:41.920 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 20:31:41.938 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat started on port 8080 (http) with context path '/'
+29 Apr 2026 - 20:31:41.939 - o.s.c.n.e.s.EurekaAutoServiceRegistration - INFO  - [] Updating port to 8080
+29 Apr 2026 - 20:31:41.958 - com.epam.gym.GymApplication - INFO  - [] Started GymApplication in 17.269 seconds (process running for 18.279)
+29 Apr 2026 - 20:31:41.961 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 20:31:42.444 - org.flywaydb.core.FlywayExecutor - INFO  - [] Database: jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require (PostgreSQL 17.8)
+29 Apr 2026 - 20:31:45.071 - o.f.core.internal.command.DbValidate - INFO  - [] Successfully validated 3 migrations (execution time 00:00.808s)
+29 Apr 2026 - 20:31:47.636 - o.f.core.internal.command.DbMigrate - INFO  - [] Current version of schema "public": 2
+29 Apr 2026 - 20:31:47.834 - o.f.core.internal.command.DbMigrate - INFO  - [] Schema "public" is up to date. No migration necessary.
+29 Apr 2026 - 20:31:49.025 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+29 Apr 2026 - 20:31:49.026 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+29 Apr 2026 - 20:31:49.248 - o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  - [] Initializing Spring DispatcherServlet 'dispatcherServlet'
+29 Apr 2026 - 20:31:49.249 - o.s.web.servlet.DispatcherServlet - INFO  - [] Initializing Servlet 'dispatcherServlet'
+29 Apr 2026 - 20:31:49.254 - o.s.web.servlet.DispatcherServlet - INFO  - [] Completed initialization in 5 ms
+29 Apr 2026 - 20:31:49.352 - c.epam.gym.filter.TransactionFilter - INFO  - [a2f98b47-c401-41a3-a5ee-56cb5ce6b925] [TRANSACTION START] GET /api/v1/training-type
+29 Apr 2026 - 20:31:49.353 - c.epam.gym.filter.TransactionFilter - INFO  - [a2f98b47-c401-41a3-a5ee-56cb5ce6b925] [TRANSACTION ID] a2f98b47-c401-41a3-a5ee-56cb5ce6b925
+29 Apr 2026 - 20:31:50.069 - c.epam.gym.filter.TransactionFilter - INFO  - [a2f98b47-c401-41a3-a5ee-56cb5ce6b925] [TRANSACTION END] GET /api/v1/training-type | status=200 | time=717ms
+29 Apr 2026 - 20:33:19.031 - c.epam.gym.filter.TransactionFilter - INFO  - [83a30db8-81b5-4500-bc6f-b09f456f6325] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:33:19.031 - c.epam.gym.filter.TransactionFilter - INFO  - [83a30db8-81b5-4500-bc6f-b09f456f6325] [TRANSACTION ID] 83a30db8-81b5-4500-bc6f-b09f456f6325
+29 Apr 2026 - 20:33:20.629 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [83a30db8-81b5-4500-bc6f-b09f456f6325] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:33:20.630 - c.epam.gym.service.TrainingService - INFO  - [83a30db8-81b5-4500-bc6f-b09f456f6325] Training added 151
+29 Apr 2026 - 20:33:20.837 - c.epam.gym.filter.TransactionFilter - INFO  - [83a30db8-81b5-4500-bc6f-b09f456f6325] [TRANSACTION END] POST /api/v1/training | status=200 | time=1806ms
+29 Apr 2026 - 20:34:07.590 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Unregistering application GYM-MAIN-SERVICE with eureka with status DOWN
+29 Apr 2026 - 20:34:07.591 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777462447591, current=DOWN, previous=UP]
+29 Apr 2026 - 20:34:07.591 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 20:34:07.594 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Commencing graceful shutdown. Waiting for active requests to complete
+29 Apr 2026 - 20:34:07.597 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 20:34:07.603 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Graceful shutdown complete
+29 Apr 2026 - 20:34:07.617 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Closing JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 20:34:07.620 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown initiated...
+29 Apr 2026 - 20:34:09.592 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown completed.
+29 Apr 2026 - 20:34:09.593 - c.netflix.discovery.DiscoveryClient - INFO  - [] Shutting down DiscoveryClient ...
+29 Apr 2026 - 20:34:12.597 - c.netflix.discovery.DiscoveryClient - INFO  - [] Unregistering ...
+29 Apr 2026 - 20:34:12.597 - c.n.discovery.TimedSupervisorTask - WARN  - [] task supervisor shutting down, can't accept the task
+29 Apr 2026 - 20:34:12.601 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - deregister  status: 200
+29 Apr 2026 - 20:34:12.601 - c.netflix.discovery.DiscoveryClient - INFO  - [] Completed shut down of DiscoveryClient
+29 Apr 2026 - 20:34:20.694 - com.epam.gym.GymApplication - INFO  - [] Starting GymApplication using Java 23 with PID 18128 (G:\PROGRAMMING\Java Projects\epam_gym\gym\target\classes started by Sanjar in G:\PROGRAMMING\Java Projects\epam_gym)
+29 Apr 2026 - 20:34:20.707 - com.epam.gym.GymApplication - INFO  - [] The following 1 profile is active: "dev"
+29 Apr 2026 - 20:34:22.085 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29 Apr 2026 - 20:34:22.264 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Finished Spring Data repository scanning in 169 ms. Found 6 JPA repository interfaces.
+29 Apr 2026 - 20:34:22.780 - o.s.cloud.context.scope.GenericScope - INFO  - [] BeanFactory id=403bb2c8-628f-3139-97fa-7311fd0ed101
+29 Apr 2026 - 20:34:23.601 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat initialized with port 8080 (http)
+29 Apr 2026 - 20:34:23.615 - o.a.catalina.core.StandardService - INFO  - [] Starting service [Tomcat]
+29 Apr 2026 - 20:34:23.615 - o.a.catalina.core.StandardEngine - INFO  - [] Starting Servlet engine: [Apache Tomcat/11.0.20]
+29 Apr 2026 - 20:34:23.669 - o.s.b.w.c.s.WebApplicationContextInitializer - INFO  - [] Root WebApplicationContext: initialization completed in 2896 ms
+29 Apr 2026 - 20:34:24.249 - org.hibernate.orm.jpa - INFO  - [] HHH008540: Processing PersistenceUnitInfo [name: default]
+29 Apr 2026 - 20:34:24.295 - org.hibernate.orm.core - INFO  - [] HHH000001: Hibernate ORM core version 7.2.7.Final
+29 Apr 2026 - 20:34:24.735 - o.s.o.j.p.SpringPersistenceUnitInfo - INFO  - [] No LoadTimeWeaver setup: ignoring JPA class transformer
+29 Apr 2026 - 20:34:24.766 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Starting...
+29 Apr 2026 - 20:34:26.965 - com.zaxxer.hikari.pool.HikariPool - INFO  - [] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2bc52b08
+29 Apr 2026 - 20:34:26.967 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Start completed.
+29 Apr 2026 - 20:34:28.227 - o.hibernate.orm.connections.pooling - INFO  - [] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: gymdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+29 Apr 2026 - 20:34:29.218 - org.hibernate.orm.core - INFO  - [] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+29 Apr 2026 - 20:34:31.948 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Initialized JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 20:34:32.130 - o.s.d.j.r.q.QueryEnhancerFactories - INFO  - [] Hibernate is in classpath; If applicable, HQL parser will be used.
+29 Apr 2026 - 20:34:32.892 - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - WARN  - [] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29 Apr 2026 - 20:34:34.205 - o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - INFO  - [] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+29 Apr 2026 - 20:34:34.206 - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - WARN  - [] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+29 Apr 2026 - 20:34:37.199 - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - INFO  - [] Eureka HTTP Client uses RestClient.
+29 Apr 2026 - 20:34:37.303 - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - WARN  - [] Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+29 Apr 2026 - 20:34:37.338 - o.s.b.a.e.web.EndpointLinksResolver - INFO  - [] Exposing 28 endpoints beneath base path '/actuator'
+29 Apr 2026 - 20:34:37.496 - o.s.c.n.eureka.InstanceInfoFactory - INFO  - [] Setting initial instance status as: STARTING
+29 Apr 2026 - 20:34:37.525 - c.netflix.discovery.DiscoveryClient - INFO  - [] Initializing Eureka in region us-east-1
+29 Apr 2026 - 20:34:37.528 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:34:37.537 - c.netflix.discovery.DiscoveryClient - INFO  - [] Disable delta property : false
+29 Apr 2026 - 20:34:37.537 - c.netflix.discovery.DiscoveryClient - INFO  - [] Single vip registry refresh property : null
+29 Apr 2026 - 20:34:37.537 - c.netflix.discovery.DiscoveryClient - INFO  - [] Force full registry fetch : false
+29 Apr 2026 - 20:34:37.537 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application is null : false
+29 Apr 2026 - 20:34:37.537 - c.netflix.discovery.DiscoveryClient - INFO  - [] Registered Applications size is zero : true
+29 Apr 2026 - 20:34:37.538 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application version is -1: true
+29 Apr 2026 - 20:34:37.538 - c.netflix.discovery.DiscoveryClient - INFO  - [] Getting all instance registry info from the eureka server
+29 Apr 2026 - 20:34:37.900 - c.netflix.discovery.DiscoveryClient - INFO  - [] The response status is 200
+29 Apr 2026 - 20:34:37.902 - c.netflix.discovery.DiscoveryClient - INFO  - [] Starting heartbeat executor: renew interval is: 30
+29 Apr 2026 - 20:34:37.904 - c.n.discovery.InstanceInfoReplicator - INFO  - [] InstanceInfoReplicator onDemand update allowed rate per min is 4
+29 Apr 2026 - 20:34:37.906 - c.netflix.discovery.DiscoveryClient - INFO  - [] Discovery Client initialized at timestamp 1777462477906 with initial instances count: 1
+29 Apr 2026 - 20:34:37.925 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Registering application GYM-MAIN-SERVICE with eureka with status UP
+29 Apr 2026 - 20:34:37.926 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777462477926, current=UP, previous=STARTING]
+29 Apr 2026 - 20:34:37.927 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 20:34:37.946 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat started on port 8080 (http) with context path '/'
+29 Apr 2026 - 20:34:37.947 - o.s.c.n.e.s.EurekaAutoServiceRegistration - INFO  - [] Updating port to 8080
+29 Apr 2026 - 20:34:37.965 - com.epam.gym.GymApplication - INFO  - [] Started GymApplication in 17.87 seconds (process running for 19.043)
+29 Apr 2026 - 20:34:37.966 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 20:34:38.454 - org.flywaydb.core.FlywayExecutor - INFO  - [] Database: jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require (PostgreSQL 17.8)
+29 Apr 2026 - 20:34:41.074 - o.f.core.internal.command.DbValidate - INFO  - [] Successfully validated 3 migrations (execution time 00:00.802s)
+29 Apr 2026 - 20:34:43.663 - o.f.core.internal.command.DbMigrate - INFO  - [] Current version of schema "public": 2
+29 Apr 2026 - 20:34:43.857 - o.f.core.internal.command.DbMigrate - INFO  - [] Schema "public" is up to date. No migration necessary.
+29 Apr 2026 - 20:34:45.062 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+29 Apr 2026 - 20:34:45.062 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+29 Apr 2026 - 20:34:45.504 - o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  - [] Initializing Spring DispatcherServlet 'dispatcherServlet'
+29 Apr 2026 - 20:34:45.505 - o.s.web.servlet.DispatcherServlet - INFO  - [] Initializing Servlet 'dispatcherServlet'
+29 Apr 2026 - 20:34:45.511 - o.s.web.servlet.DispatcherServlet - INFO  - [] Completed initialization in 5 ms
+29 Apr 2026 - 20:34:45.614 - c.epam.gym.filter.TransactionFilter - INFO  - [b30160e3-6546-412e-94f8-d0161326e541] [TRANSACTION START] GET /api/v1/training-type
+29 Apr 2026 - 20:34:45.615 - c.epam.gym.filter.TransactionFilter - INFO  - [b30160e3-6546-412e-94f8-d0161326e541] [TRANSACTION ID] b30160e3-6546-412e-94f8-d0161326e541
+29 Apr 2026 - 20:34:46.595 - c.epam.gym.filter.TransactionFilter - INFO  - [b30160e3-6546-412e-94f8-d0161326e541] [TRANSACTION END] GET /api/v1/training-type | status=200 | time=981ms
+29 Apr 2026 - 20:35:05.854 - c.epam.gym.filter.TransactionFilter - INFO  - [e2634d50-246c-4748-b114-c7ff0f180015] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:35:05.854 - c.epam.gym.filter.TransactionFilter - INFO  - [e2634d50-246c-4748-b114-c7ff0f180015] [TRANSACTION ID] e2634d50-246c-4748-b114-c7ff0f180015
+29 Apr 2026 - 20:35:07.490 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [e2634d50-246c-4748-b114-c7ff0f180015] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:35:07.490 - c.epam.gym.service.TrainingService - INFO  - [e2634d50-246c-4748-b114-c7ff0f180015] Training added 152
+29 Apr 2026 - 20:35:07.688 - c.epam.gym.filter.TransactionFilter - INFO  - [e2634d50-246c-4748-b114-c7ff0f180015] [TRANSACTION END] POST /api/v1/training | status=200 | time=1834ms
+29 Apr 2026 - 20:38:09.883 - c.epam.gym.filter.TransactionFilter - INFO  - [24707f10-6e61-443e-9da4-2d6688af1c6c] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:38:09.884 - c.epam.gym.filter.TransactionFilter - INFO  - [24707f10-6e61-443e-9da4-2d6688af1c6c] [TRANSACTION ID] 24707f10-6e61-443e-9da4-2d6688af1c6c
+29 Apr 2026 - 20:38:11.621 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [24707f10-6e61-443e-9da4-2d6688af1c6c] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:38:11.622 - c.epam.gym.service.TrainingService - INFO  - [24707f10-6e61-443e-9da4-2d6688af1c6c] Training added 153
+29 Apr 2026 - 20:38:11.821 - c.epam.gym.filter.TransactionFilter - INFO  - [24707f10-6e61-443e-9da4-2d6688af1c6c] [TRANSACTION END] POST /api/v1/training | status=200 | time=1938ms
+29 Apr 2026 - 20:39:37.548 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:40:23.370 - c.epam.gym.filter.TransactionFilter - INFO  - [a90d6223-1d4e-4ee7-aa0d-cdf14dd8f914] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:40:23.370 - c.epam.gym.filter.TransactionFilter - INFO  - [a90d6223-1d4e-4ee7-aa0d-cdf14dd8f914] [TRANSACTION ID] a90d6223-1d4e-4ee7-aa0d-cdf14dd8f914
+29 Apr 2026 - 20:40:25.203 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [a90d6223-1d4e-4ee7-aa0d-cdf14dd8f914] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:40:25.204 - c.epam.gym.service.TrainingService - INFO  - [a90d6223-1d4e-4ee7-aa0d-cdf14dd8f914] Training added 154
+29 Apr 2026 - 20:40:25.411 - c.epam.gym.filter.TransactionFilter - INFO  - [a90d6223-1d4e-4ee7-aa0d-cdf14dd8f914] [TRANSACTION END] POST /api/v1/training | status=200 | time=2041ms
+29 Apr 2026 - 20:40:36.151 - c.epam.gym.filter.TransactionFilter - INFO  - [f6ccfaf1-3616-4b9d-bef9-2cdf32afddcb] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:40:36.151 - c.epam.gym.filter.TransactionFilter - INFO  - [f6ccfaf1-3616-4b9d-bef9-2cdf32afddcb] [TRANSACTION ID] f6ccfaf1-3616-4b9d-bef9-2cdf32afddcb
+29 Apr 2026 - 20:40:37.585 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [f6ccfaf1-3616-4b9d-bef9-2cdf32afddcb] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:40:37.585 - c.epam.gym.service.TrainingService - INFO  - [f6ccfaf1-3616-4b9d-bef9-2cdf32afddcb] Training added 155
+29 Apr 2026 - 20:40:37.790 - c.epam.gym.filter.TransactionFilter - INFO  - [f6ccfaf1-3616-4b9d-bef9-2cdf32afddcb] [TRANSACTION END] POST /api/v1/training | status=200 | time=1639ms
+29 Apr 2026 - 20:41:12.292 - c.epam.gym.filter.TransactionFilter - INFO  - [2918128b-c118-4af3-be0b-25fb8e16a741] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:41:12.293 - c.epam.gym.filter.TransactionFilter - INFO  - [2918128b-c118-4af3-be0b-25fb8e16a741] [TRANSACTION ID] 2918128b-c118-4af3-be0b-25fb8e16a741
+29 Apr 2026 - 20:41:14.048 - c.e.g.s.clint.WorkloadClientFallback - ERROR - [2918128b-c118-4af3-be0b-25fb8e16a741] Workload service is DOWN. Fallback triggered for user: John3.Doe3
+29 Apr 2026 - 20:41:14.048 - c.epam.gym.service.TrainingService - INFO  - [2918128b-c118-4af3-be0b-25fb8e16a741] Training added 156
+29 Apr 2026 - 20:41:14.246 - c.epam.gym.filter.TransactionFilter - INFO  - [2918128b-c118-4af3-be0b-25fb8e16a741] [TRANSACTION END] POST /api/v1/training | status=200 | time=1954ms
+29 Apr 2026 - 20:44:37.552 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:45:58.590 - c.epam.gym.filter.TransactionFilter - INFO  - [db0e5047-13d4-4196-a0e9-d15dd822fb12] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:45:58.590 - c.epam.gym.filter.TransactionFilter - INFO  - [db0e5047-13d4-4196-a0e9-d15dd822fb12] [TRANSACTION ID] db0e5047-13d4-4196-a0e9-d15dd822fb12
+29 Apr 2026 - 20:46:00.401 - c.epam.gym.service.TrainingService - INFO  - [db0e5047-13d4-4196-a0e9-d15dd822fb12] Training added 157
+29 Apr 2026 - 20:46:00.602 - c.epam.gym.filter.TransactionFilter - INFO  - [db0e5047-13d4-4196-a0e9-d15dd822fb12] [TRANSACTION END] POST /api/v1/training | status=200 | time=2012ms
+29 Apr 2026 - 20:46:46.945 - c.epam.gym.filter.TransactionFilter - INFO  - [95d93d1a-fa4d-472e-9df3-acf54dc7bc06] [TRANSACTION START] DELETE /api/v1/training/157
+29 Apr 2026 - 20:46:46.945 - c.epam.gym.filter.TransactionFilter - INFO  - [95d93d1a-fa4d-472e-9df3-acf54dc7bc06] [TRANSACTION ID] 95d93d1a-fa4d-472e-9df3-acf54dc7bc06
+29 Apr 2026 - 20:46:47.494 - c.epam.gym.service.TrainingService - INFO  - [95d93d1a-fa4d-472e-9df3-acf54dc7bc06] Training deleted 157
+29 Apr 2026 - 20:46:47.899 - c.epam.gym.filter.TransactionFilter - INFO  - [95d93d1a-fa4d-472e-9df3-acf54dc7bc06] [TRANSACTION END] DELETE /api/v1/training/157 | status=200 | time=954ms
+29 Apr 2026 - 20:49:37.564 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:50:11.356 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Unregistering application GYM-MAIN-SERVICE with eureka with status DOWN
+29 Apr 2026 - 20:50:11.357 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777463411357, current=DOWN, previous=UP]
+29 Apr 2026 - 20:50:11.357 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 20:50:11.360 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Commencing graceful shutdown. Waiting for active requests to complete
+29 Apr 2026 - 20:50:11.370 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Graceful shutdown complete
+29 Apr 2026 - 20:50:11.371 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 20:50:11.383 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Closing JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 20:50:11.385 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown initiated...
+29 Apr 2026 - 20:50:13.309 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown completed.
+29 Apr 2026 - 20:50:13.310 - c.netflix.discovery.DiscoveryClient - INFO  - [] Shutting down DiscoveryClient ...
+29 Apr 2026 - 20:50:16.315 - c.netflix.discovery.DiscoveryClient - INFO  - [] Unregistering ...
+29 Apr 2026 - 20:50:16.332 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - deregister  status: 200
+29 Apr 2026 - 20:50:16.332 - c.netflix.discovery.DiscoveryClient - INFO  - [] Completed shut down of DiscoveryClient
+29 Apr 2026 - 20:50:25.308 - com.epam.gym.GymApplication - INFO  - [] Starting GymApplication using Java 23 with PID 16884 (G:\PROGRAMMING\Java Projects\epam_gym\gym\target\classes started by Sanjar in G:\PROGRAMMING\Java Projects\epam_gym)
+29 Apr 2026 - 20:50:25.319 - com.epam.gym.GymApplication - INFO  - [] The following 1 profile is active: "dev"
+29 Apr 2026 - 20:50:26.672 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29 Apr 2026 - 20:50:26.841 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Finished Spring Data repository scanning in 159 ms. Found 6 JPA repository interfaces.
+29 Apr 2026 - 20:50:27.359 - o.s.cloud.context.scope.GenericScope - INFO  - [] BeanFactory id=403bb2c8-628f-3139-97fa-7311fd0ed101
+29 Apr 2026 - 20:50:28.176 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat initialized with port 8080 (http)
+29 Apr 2026 - 20:50:28.188 - o.a.catalina.core.StandardService - INFO  - [] Starting service [Tomcat]
+29 Apr 2026 - 20:50:28.188 - o.a.catalina.core.StandardEngine - INFO  - [] Starting Servlet engine: [Apache Tomcat/11.0.20]
+29 Apr 2026 - 20:50:28.243 - o.s.b.w.c.s.WebApplicationContextInitializer - INFO  - [] Root WebApplicationContext: initialization completed in 2873 ms
+29 Apr 2026 - 20:50:28.849 - org.hibernate.orm.jpa - INFO  - [] HHH008540: Processing PersistenceUnitInfo [name: default]
+29 Apr 2026 - 20:50:28.904 - org.hibernate.orm.core - INFO  - [] HHH000001: Hibernate ORM core version 7.2.7.Final
+29 Apr 2026 - 20:50:29.356 - o.s.o.j.p.SpringPersistenceUnitInfo - INFO  - [] No LoadTimeWeaver setup: ignoring JPA class transformer
+29 Apr 2026 - 20:50:29.387 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Starting...
+29 Apr 2026 - 20:50:31.537 - com.zaxxer.hikari.pool.HikariPool - INFO  - [] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46c92d27
+29 Apr 2026 - 20:50:31.538 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Start completed.
+29 Apr 2026 - 20:50:32.747 - o.hibernate.orm.connections.pooling - INFO  - [] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: gymdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+29 Apr 2026 - 20:50:33.847 - org.hibernate.orm.core - INFO  - [] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+29 Apr 2026 - 20:50:36.013 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Initialized JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 20:50:36.198 - o.s.d.j.r.q.QueryEnhancerFactories - INFO  - [] Hibernate is in classpath; If applicable, HQL parser will be used.
+29 Apr 2026 - 20:50:36.962 - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - WARN  - [] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29 Apr 2026 - 20:50:38.354 - o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - INFO  - [] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+29 Apr 2026 - 20:50:38.355 - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - WARN  - [] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+29 Apr 2026 - 20:50:41.540 - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - INFO  - [] Eureka HTTP Client uses RestClient.
+29 Apr 2026 - 20:50:41.681 - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - WARN  - [] Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+29 Apr 2026 - 20:50:41.715 - o.s.b.a.e.web.EndpointLinksResolver - INFO  - [] Exposing 28 endpoints beneath base path '/actuator'
+29 Apr 2026 - 20:50:41.867 - o.s.c.n.eureka.InstanceInfoFactory - INFO  - [] Setting initial instance status as: STARTING
+29 Apr 2026 - 20:50:41.894 - c.netflix.discovery.DiscoveryClient - INFO  - [] Initializing Eureka in region us-east-1
+29 Apr 2026 - 20:50:41.897 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 20:50:41.906 - c.netflix.discovery.DiscoveryClient - INFO  - [] Disable delta property : false
+29 Apr 2026 - 20:50:41.906 - c.netflix.discovery.DiscoveryClient - INFO  - [] Single vip registry refresh property : null
+29 Apr 2026 - 20:50:41.906 - c.netflix.discovery.DiscoveryClient - INFO  - [] Force full registry fetch : false
+29 Apr 2026 - 20:50:41.906 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application is null : false
+29 Apr 2026 - 20:50:41.906 - c.netflix.discovery.DiscoveryClient - INFO  - [] Registered Applications size is zero : true
+29 Apr 2026 - 20:50:41.907 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application version is -1: true
+29 Apr 2026 - 20:50:41.907 - c.netflix.discovery.DiscoveryClient - INFO  - [] Getting all instance registry info from the eureka server
+29 Apr 2026 - 20:50:42.270 - c.netflix.discovery.DiscoveryClient - INFO  - [] The response status is 200
+29 Apr 2026 - 20:50:42.272 - c.netflix.discovery.DiscoveryClient - INFO  - [] Starting heartbeat executor: renew interval is: 30
+29 Apr 2026 - 20:50:42.274 - c.n.discovery.InstanceInfoReplicator - INFO  - [] InstanceInfoReplicator onDemand update allowed rate per min is 4
+29 Apr 2026 - 20:50:42.275 - c.netflix.discovery.DiscoveryClient - INFO  - [] Discovery Client initialized at timestamp 1777463442275 with initial instances count: 1
+29 Apr 2026 - 20:50:42.295 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Registering application GYM-MAIN-SERVICE with eureka with status UP
+29 Apr 2026 - 20:50:42.295 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777463442295, current=UP, previous=STARTING]
+29 Apr 2026 - 20:50:42.297 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 20:50:42.316 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat started on port 8080 (http) with context path '/'
+29 Apr 2026 - 20:50:42.317 - o.s.c.n.e.s.EurekaAutoServiceRegistration - INFO  - [] Updating port to 8080
+29 Apr 2026 - 20:50:42.337 - com.epam.gym.GymApplication - INFO  - [] Started GymApplication in 17.543 seconds (process running for 18.509)
+29 Apr 2026 - 20:50:42.341 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 20:50:42.832 - org.flywaydb.core.FlywayExecutor - INFO  - [] Database: jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require (PostgreSQL 17.8)
+29 Apr 2026 - 20:50:45.343 - o.f.core.internal.command.DbValidate - INFO  - [] Successfully validated 3 migrations (execution time 00:00.770s)
+29 Apr 2026 - 20:50:47.850 - o.f.core.internal.command.DbMigrate - INFO  - [] Current version of schema "public": 2
+29 Apr 2026 - 20:50:48.064 - o.f.core.internal.command.DbMigrate - INFO  - [] Schema "public" is up to date. No migration necessary.
+29 Apr 2026 - 20:50:49.207 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+29 Apr 2026 - 20:50:49.207 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+29 Apr 2026 - 20:50:49.387 - o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  - [] Initializing Spring DispatcherServlet 'dispatcherServlet'
+29 Apr 2026 - 20:50:49.388 - o.s.web.servlet.DispatcherServlet - INFO  - [] Initializing Servlet 'dispatcherServlet'
+29 Apr 2026 - 20:50:49.393 - o.s.web.servlet.DispatcherServlet - INFO  - [] Completed initialization in 4 ms
+29 Apr 2026 - 20:50:49.501 - c.epam.gym.filter.TransactionFilter - INFO  - [ec63a972-9abc-430d-a481-16e51b232020] [TRANSACTION START] GET /api/v1/training-type
+29 Apr 2026 - 20:50:49.501 - c.epam.gym.filter.TransactionFilter - INFO  - [ec63a972-9abc-430d-a481-16e51b232020] [TRANSACTION ID] ec63a972-9abc-430d-a481-16e51b232020
+29 Apr 2026 - 20:50:50.265 - c.epam.gym.filter.TransactionFilter - INFO  - [ec63a972-9abc-430d-a481-16e51b232020] [TRANSACTION END] GET /api/v1/training-type | status=200 | time=764ms
+29 Apr 2026 - 20:51:25.974 - c.epam.gym.filter.TransactionFilter - INFO  - [92131cfa-f456-4b8c-bcdf-c57cc2c21b75] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:51:25.974 - c.epam.gym.filter.TransactionFilter - INFO  - [92131cfa-f456-4b8c-bcdf-c57cc2c21b75] [TRANSACTION ID] 92131cfa-f456-4b8c-bcdf-c57cc2c21b75
+29 Apr 2026 - 20:51:27.477 - c.epam.gym.service.TrainingService - INFO  - [92131cfa-f456-4b8c-bcdf-c57cc2c21b75] Training added 158
+29 Apr 2026 - 20:51:27.669 - c.epam.gym.filter.TransactionFilter - INFO  - [92131cfa-f456-4b8c-bcdf-c57cc2c21b75] [TRANSACTION END] POST /api/v1/training | status=200 | time=1695ms
+29 Apr 2026 - 20:51:53.069 - c.epam.gym.filter.TransactionFilter - INFO  - [b7a4b8d9-013c-4d09-82d2-aea06ae60839] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 20:51:53.069 - c.epam.gym.filter.TransactionFilter - INFO  - [b7a4b8d9-013c-4d09-82d2-aea06ae60839] [TRANSACTION ID] b7a4b8d9-013c-4d09-82d2-aea06ae60839
+29 Apr 2026 - 20:51:54.399 - c.epam.gym.service.TrainingService - INFO  - [b7a4b8d9-013c-4d09-82d2-aea06ae60839] Training added 159
+29 Apr 2026 - 20:51:54.588 - c.epam.gym.filter.TransactionFilter - INFO  - [b7a4b8d9-013c-4d09-82d2-aea06ae60839] [TRANSACTION END] POST /api/v1/training | status=200 | time=1519ms
+29 Apr 2026 - 20:55:41.910 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:00:41.925 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:05:41.949 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:10:41.957 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:15:41.960 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:20:41.971 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:25:41.975 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:30:41.988 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:32:19.690 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Unregistering application GYM-MAIN-SERVICE with eureka with status DOWN
+29 Apr 2026 - 21:32:19.690 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777465939690, current=DOWN, previous=UP]
+29 Apr 2026 - 21:32:19.691 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 21:32:19.697 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Commencing graceful shutdown. Waiting for active requests to complete
+29 Apr 2026 - 21:32:19.707 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Graceful shutdown complete
+29 Apr 2026 - 21:32:19.718 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 21:32:19.727 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Closing JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 21:32:19.730 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown initiated...
+29 Apr 2026 - 21:32:21.636 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown completed.
+29 Apr 2026 - 21:32:21.637 - c.netflix.discovery.DiscoveryClient - INFO  - [] Shutting down DiscoveryClient ...
+29 Apr 2026 - 21:32:24.648 - c.netflix.discovery.DiscoveryClient - INFO  - [] Unregistering ...
+29 Apr 2026 - 21:32:24.682 - c.n.d.s.t.d.RedirectingEurekaHttpClient - INFO  - [] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:776)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:921)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:885)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.cancel(RestClientEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1246)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1207)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 39 more
+
+29 Apr 2026 - 21:32:24.683 - c.n.d.s.t.d.RetryableEurekaHttpClient - WARN  - [] Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+29 Apr 2026 - 21:32:24.727 - c.n.d.s.t.d.RedirectingEurekaHttpClient - INFO  - [] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:776)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:921)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:885)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.cancel(RestClientEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1246)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1207)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 40 more
+
+29 Apr 2026 - 21:32:24.727 - c.n.d.s.t.d.RetryableEurekaHttpClient - WARN  - [] Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+29 Apr 2026 - 21:32:24.727 - c.netflix.discovery.DiscoveryClient - ERROR - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1246)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1207)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+29 Apr 2026 - 21:32:24.731 - c.netflix.discovery.DiscoveryClient - INFO  - [] Completed shut down of DiscoveryClient
+29 Apr 2026 - 21:32:40.638 - com.epam.gym.GymApplication - INFO  - [] Starting GymApplication using Java 23 with PID 8652 (G:\PROGRAMMING\Java Projects\epam_gym\gym\target\classes started by Sanjar in G:\PROGRAMMING\Java Projects\epam_gym)
+29 Apr 2026 - 21:32:40.654 - com.epam.gym.GymApplication - INFO  - [] The following 1 profile is active: "dev"
+29 Apr 2026 - 21:32:42.039 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29 Apr 2026 - 21:32:42.279 - o.s.d.r.c.RepositoryConfigurationDelegate - INFO  - [] Finished Spring Data repository scanning in 228 ms. Found 6 JPA repository interfaces.
+29 Apr 2026 - 21:32:42.929 - o.s.cloud.context.scope.GenericScope - INFO  - [] BeanFactory id=403bb2c8-628f-3139-97fa-7311fd0ed101
+29 Apr 2026 - 21:32:43.794 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat initialized with port 8080 (http)
+29 Apr 2026 - 21:32:43.806 - o.a.catalina.core.StandardService - INFO  - [] Starting service [Tomcat]
+29 Apr 2026 - 21:32:43.807 - o.a.catalina.core.StandardEngine - INFO  - [] Starting Servlet engine: [Apache Tomcat/11.0.20]
+29 Apr 2026 - 21:32:43.869 - o.s.b.w.c.s.WebApplicationContextInitializer - INFO  - [] Root WebApplicationContext: initialization completed in 3161 ms
+29 Apr 2026 - 21:32:44.480 - org.hibernate.orm.jpa - INFO  - [] HHH008540: Processing PersistenceUnitInfo [name: default]
+29 Apr 2026 - 21:32:44.571 - org.hibernate.orm.core - INFO  - [] HHH000001: Hibernate ORM core version 7.2.7.Final
+29 Apr 2026 - 21:32:45.253 - o.s.o.j.p.SpringPersistenceUnitInfo - INFO  - [] No LoadTimeWeaver setup: ignoring JPA class transformer
+29 Apr 2026 - 21:32:45.297 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Starting...
+29 Apr 2026 - 21:32:47.666 - com.zaxxer.hikari.pool.HikariPool - INFO  - [] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@10ab976b
+29 Apr 2026 - 21:32:47.668 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Start completed.
+29 Apr 2026 - 21:32:49.007 - o.hibernate.orm.connections.pooling - INFO  - [] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: gymdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+29 Apr 2026 - 21:32:50.199 - org.hibernate.orm.core - INFO  - [] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+29 Apr 2026 - 21:32:52.457 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Initialized JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 21:32:52.640 - o.s.d.j.r.q.QueryEnhancerFactories - INFO  - [] Hibernate is in classpath; If applicable, HQL parser will be used.
+29 Apr 2026 - 21:32:54.275 - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - WARN  - [] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29 Apr 2026 - 21:32:54.863 - o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - INFO  - [] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+29 Apr 2026 - 21:32:54.864 - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - WARN  - [] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+29 Apr 2026 - 21:32:57.918 - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - INFO  - [] Eureka HTTP Client uses RestClient.
+29 Apr 2026 - 21:32:58.029 - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - WARN  - [] Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+29 Apr 2026 - 21:32:58.062 - o.s.b.a.e.web.EndpointLinksResolver - INFO  - [] Exposing 28 endpoints beneath base path '/actuator'
+29 Apr 2026 - 21:32:58.206 - o.s.c.n.eureka.InstanceInfoFactory - INFO  - [] Setting initial instance status as: STARTING
+29 Apr 2026 - 21:32:58.234 - c.netflix.discovery.DiscoveryClient - INFO  - [] Initializing Eureka in region us-east-1
+29 Apr 2026 - 21:32:58.238 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:32:58.247 - c.netflix.discovery.DiscoveryClient - INFO  - [] Disable delta property : false
+29 Apr 2026 - 21:32:58.247 - c.netflix.discovery.DiscoveryClient - INFO  - [] Single vip registry refresh property : null
+29 Apr 2026 - 21:32:58.247 - c.netflix.discovery.DiscoveryClient - INFO  - [] Force full registry fetch : false
+29 Apr 2026 - 21:32:58.247 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application is null : false
+29 Apr 2026 - 21:32:58.248 - c.netflix.discovery.DiscoveryClient - INFO  - [] Registered Applications size is zero : true
+29 Apr 2026 - 21:32:58.248 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application version is -1: true
+29 Apr 2026 - 21:32:58.248 - c.netflix.discovery.DiscoveryClient - INFO  - [] Getting all instance registry info from the eureka server
+29 Apr 2026 - 21:32:58.718 - c.netflix.discovery.DiscoveryClient - INFO  - [] The response status is 200
+29 Apr 2026 - 21:32:58.719 - c.netflix.discovery.DiscoveryClient - INFO  - [] Starting heartbeat executor: renew interval is: 30
+29 Apr 2026 - 21:32:58.721 - c.n.discovery.InstanceInfoReplicator - INFO  - [] InstanceInfoReplicator onDemand update allowed rate per min is 4
+29 Apr 2026 - 21:32:58.722 - c.netflix.discovery.DiscoveryClient - INFO  - [] Discovery Client initialized at timestamp 1777465978722 with initial instances count: 0
+29 Apr 2026 - 21:32:58.751 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Registering application GYM-MAIN-SERVICE with eureka with status UP
+29 Apr 2026 - 21:32:58.752 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777465978752, current=UP, previous=STARTING]
+29 Apr 2026 - 21:32:58.754 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 21:32:58.776 - o.s.boot.tomcat.TomcatWebServer - INFO  - [] Tomcat started on port 8080 (http) with context path '/'
+29 Apr 2026 - 21:32:58.777 - o.s.c.n.e.s.EurekaAutoServiceRegistration - INFO  - [] Updating port to 8080
+29 Apr 2026 - 21:32:58.795 - com.epam.gym.GymApplication - INFO  - [] Started GymApplication in 18.723 seconds (process running for 19.653)
+29 Apr 2026 - 21:32:58.893 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration status: 204
+29 Apr 2026 - 21:32:59.306 - org.flywaydb.core.FlywayExecutor - INFO  - [] Database: jdbc:postgresql://ep-billowing-mud-aiprlmtr-pooler.c-4.us-east-1.aws.neon.tech/gymdb?sslmode=require&channel_binding=require (PostgreSQL 17.8)
+29 Apr 2026 - 21:33:01.962 - o.f.core.internal.command.DbValidate - INFO  - [] Successfully validated 3 migrations (execution time 00:00.808s)
+29 Apr 2026 - 21:33:04.965 - o.f.core.internal.command.DbMigrate - INFO  - [] Current version of schema "public": 2
+29 Apr 2026 - 21:33:05.171 - o.f.core.internal.command.DbMigrate - INFO  - [] Schema "public" is up to date. No migration necessary.
+29 Apr 2026 - 21:33:06.380 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+29 Apr 2026 - 21:33:06.380 - o.s.c.events.SpringDocAppInitializer - WARN  - [] SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+29 Apr 2026 - 21:33:06.804 - o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  - [] Initializing Spring DispatcherServlet 'dispatcherServlet'
+29 Apr 2026 - 21:33:06.804 - o.s.web.servlet.DispatcherServlet - INFO  - [] Initializing Servlet 'dispatcherServlet'
+29 Apr 2026 - 21:33:06.808 - o.s.web.servlet.DispatcherServlet - INFO  - [] Completed initialization in 4 ms
+29 Apr 2026 - 21:33:06.901 - c.epam.gym.filter.TransactionFilter - INFO  - [2712eacb-d804-409f-9ccd-ce687d7ceea8] [TRANSACTION START] GET /api/v1/training-type
+29 Apr 2026 - 21:33:06.901 - c.epam.gym.filter.TransactionFilter - INFO  - [2712eacb-d804-409f-9ccd-ce687d7ceea8] [TRANSACTION ID] 2712eacb-d804-409f-9ccd-ce687d7ceea8
+29 Apr 2026 - 21:33:07.860 - c.epam.gym.filter.TransactionFilter - INFO  - [2712eacb-d804-409f-9ccd-ce687d7ceea8] [TRANSACTION END] GET /api/v1/training-type | status=200 | time=959ms
+29 Apr 2026 - 21:33:28.721 - c.netflix.discovery.DiscoveryClient - INFO  - [] Disable delta property : false
+29 Apr 2026 - 21:33:28.721 - c.netflix.discovery.DiscoveryClient - INFO  - [] Single vip registry refresh property : null
+29 Apr 2026 - 21:33:28.721 - c.netflix.discovery.DiscoveryClient - INFO  - [] Force full registry fetch : false
+29 Apr 2026 - 21:33:28.721 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application is null : false
+29 Apr 2026 - 21:33:28.721 - c.netflix.discovery.DiscoveryClient - INFO  - [] Registered Applications size is zero : true
+29 Apr 2026 - 21:33:28.721 - c.netflix.discovery.DiscoveryClient - INFO  - [] Application version is -1: false
+29 Apr 2026 - 21:33:28.721 - c.netflix.discovery.DiscoveryClient - INFO  - [] Getting all instance registry info from the eureka server
+29 Apr 2026 - 21:33:28.759 - c.netflix.discovery.DiscoveryClient - INFO  - [] The response status is 200
+29 Apr 2026 - 21:34:05.510 - c.epam.gym.filter.TransactionFilter - INFO  - [9dd1b985-5514-48fd-a9af-0b1cae790b0b] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 21:34:05.510 - c.epam.gym.filter.TransactionFilter - INFO  - [9dd1b985-5514-48fd-a9af-0b1cae790b0b] [TRANSACTION ID] 9dd1b985-5514-48fd-a9af-0b1cae790b0b
+29 Apr 2026 - 21:34:07.401 - c.epam.gym.service.TrainingService - INFO  - [9dd1b985-5514-48fd-a9af-0b1cae790b0b] Training added 160
+29 Apr 2026 - 21:34:07.604 - c.epam.gym.filter.TransactionFilter - INFO  - [9dd1b985-5514-48fd-a9af-0b1cae790b0b] [TRANSACTION END] POST /api/v1/training | status=200 | time=2094ms
+29 Apr 2026 - 21:35:17.244 - c.epam.gym.filter.TransactionFilter - INFO  - [d240b130-49d0-4934-b5f0-15084d79e751] [TRANSACTION START] POST /api/v1/trainer/register
+29 Apr 2026 - 21:35:17.244 - c.epam.gym.filter.TransactionFilter - INFO  - [d240b130-49d0-4934-b5f0-15084d79e751] [TRANSACTION ID] d240b130-49d0-4934-b5f0-15084d79e751
+29 Apr 2026 - 21:35:19.378 - com.epam.gym.service.TrainerService - INFO  - [d240b130-49d0-4934-b5f0-15084d79e751] Trainer created: 8
+29 Apr 2026 - 21:35:19.384 - c.epam.gym.filter.TransactionFilter - INFO  - [d240b130-49d0-4934-b5f0-15084d79e751] [TRANSACTION END] POST /api/v1/trainer/register | status=200 | time=2140ms
+29 Apr 2026 - 21:37:39.869 - c.epam.gym.filter.TransactionFilter - INFO  - [f893e6ee-9f56-4927-afd9-8e36c1b42bdf] [TRANSACTION START] POST /api/v1/auth/login
+29 Apr 2026 - 21:37:39.869 - c.epam.gym.filter.TransactionFilter - INFO  - [f893e6ee-9f56-4927-afd9-8e36c1b42bdf] [TRANSACTION ID] f893e6ee-9f56-4927-afd9-8e36c1b42bdf
+29 Apr 2026 - 21:37:39.888 - c.epam.gym.controller.AuthController - INFO  - [f893e6ee-9f56-4927-afd9-8e36c1b42bdf] Login auth: John4.Doe4 
+29 Apr 2026 - 21:37:40.717 - c.epam.gym.filter.TransactionFilter - INFO  - [f893e6ee-9f56-4927-afd9-8e36c1b42bdf] [TRANSACTION END] POST /api/v1/auth/login | status=200 | time=848ms
+29 Apr 2026 - 21:37:58.265 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:38:01.959 - c.epam.gym.filter.TransactionFilter - INFO  - [031e7efb-30ef-4bca-a727-ce3661d79726] [TRANSACTION START] POST /api/v1/training
+29 Apr 2026 - 21:38:01.959 - c.epam.gym.filter.TransactionFilter - INFO  - [031e7efb-30ef-4bca-a727-ce3661d79726] [TRANSACTION ID] 031e7efb-30ef-4bca-a727-ce3661d79726
+29 Apr 2026 - 21:38:04.019 - c.epam.gym.service.TrainingService - INFO  - [031e7efb-30ef-4bca-a727-ce3661d79726] Training added 161
+29 Apr 2026 - 21:38:04.407 - c.epam.gym.filter.TransactionFilter - INFO  - [031e7efb-30ef-4bca-a727-ce3661d79726] [TRANSACTION END] POST /api/v1/training | status=200 | time=2448ms
+29 Apr 2026 - 21:38:49.414 - c.epam.gym.filter.TransactionFilter - INFO  - [51a7aea7-9176-4038-9c9a-4f2aa31e15d6] [TRANSACTION START] DELETE /api/v1/training/161
+29 Apr 2026 - 21:38:49.415 - c.epam.gym.filter.TransactionFilter - INFO  - [51a7aea7-9176-4038-9c9a-4f2aa31e15d6] [TRANSACTION ID] 51a7aea7-9176-4038-9c9a-4f2aa31e15d6
+29 Apr 2026 - 21:38:49.933 - c.epam.gym.service.TrainingService - INFO  - [51a7aea7-9176-4038-9c9a-4f2aa31e15d6] Training deleted 161
+29 Apr 2026 - 21:38:50.327 - c.epam.gym.filter.TransactionFilter - INFO  - [51a7aea7-9176-4038-9c9a-4f2aa31e15d6] [TRANSACTION END] DELETE /api/v1/training/161 | status=200 | time=913ms
+29 Apr 2026 - 21:42:58.276 - c.n.d.s.r.aws.ConfigClusterResolver - INFO  - [] Resolving eureka endpoints via configuration
+29 Apr 2026 - 21:43:04.964 - o.s.c.n.e.s.EurekaServiceRegistry - INFO  - [] Unregistering application GYM-MAIN-SERVICE with eureka with status DOWN
+29 Apr 2026 - 21:43:04.965 - c.netflix.discovery.DiscoveryClient - INFO  - [] Saw local status change event StatusChangeEvent [timestamp=1777466584965, current=DOWN, previous=UP]
+29 Apr 2026 - 21:43:04.965 - c.netflix.discovery.DiscoveryClient - INFO  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080: registering service...
+29 Apr 2026 - 21:43:04.970 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Commencing graceful shutdown. Waiting for active requests to complete
+29 Apr 2026 - 21:43:04.976 - c.n.d.s.t.d.RedirectingEurekaHttpClient - INFO  - [] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE": localhost:8761 failed to respond stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE": localhost:8761 failed to respond
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:776)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:921)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:885)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.register(RestClientEurekaHttpClient.java:64)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.apache.hc.core5.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.apache.hc.core5.http.impl.io.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:333)
+	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:196)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.lambda$execute$0(InternalExecRuntime.java:236)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionEndpoint.execute(PoolingHttpClientConnectionManager.java:798)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.execute(InternalExecRuntime.java:233)
+	at org.apache.hc.client5.http.impl.classic.MainClientExec.execute(MainClientExec.java:120)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:200)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 23 more
+
+29 Apr 2026 - 21:43:04.977 - c.n.d.s.t.d.RetryableEurekaHttpClient - WARN  - [] Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE": localhost:8761 failed to respond
+29 Apr 2026 - 21:43:04.992 - o.s.boot.tomcat.GracefulShutdown - INFO  - [] Graceful shutdown complete
+29 Apr 2026 - 21:43:04.996 - c.n.d.s.t.d.RedirectingEurekaHttpClient - INFO  - [] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:776)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:921)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:885)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.register(RestClientEurekaHttpClient.java:64)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 24 more
+
+29 Apr 2026 - 21:43:04.996 - c.n.d.s.t.d.RetryableEurekaHttpClient - WARN  - [] Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+29 Apr 2026 - 21:43:04.997 - c.netflix.discovery.DiscoveryClient - WARN  - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+29 Apr 2026 - 21:43:05.003 - c.n.discovery.InstanceInfoReplicator - WARN  - [] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+29 Apr 2026 - 21:43:05.021 - o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  - [] Closing JPA EntityManagerFactory for persistence unit 'default'
+29 Apr 2026 - 21:43:05.024 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown initiated...
+29 Apr 2026 - 21:43:06.976 - com.zaxxer.hikari.HikariDataSource - INFO  - [] HikariPool-1 - Shutdown completed.
+29 Apr 2026 - 21:43:06.977 - c.netflix.discovery.DiscoveryClient - INFO  - [] Shutting down DiscoveryClient ...
+29 Apr 2026 - 21:43:09.992 - c.netflix.discovery.DiscoveryClient - INFO  - [] Unregistering ...
+29 Apr 2026 - 21:43:10.003 - c.n.d.s.t.d.RedirectingEurekaHttpClient - INFO  - [] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:776)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:921)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:885)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.cancel(RestClientEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1246)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1207)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 40 more
+
+29 Apr 2026 - 21:43:10.003 - c.n.d.s.t.d.RetryableEurekaHttpClient - WARN  - [] Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+29 Apr 2026 - 21:43:10.003 - c.netflix.discovery.DiscoveryClient - ERROR - [] DiscoveryClient_GYM-MAIN-SERVICE/WINDOWS-7TBVP5Q.mshome.net:gym-main-service:8080 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1246)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1207)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+29 Apr 2026 - 21:43:10.004 - c.netflix.discovery.DiscoveryClient - INFO  - [] Completed shut down of DiscoveryClient

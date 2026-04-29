@@ -1,0 +1,48 @@
+    //1. Trainer Registration (POST method)
+POST localhost:8080/api/v1/trainer/register
+Content-Type: application/json
+
+{
+    "firstName": "John4",
+    "lastName": "Doe4",
+    "trainingTypeId":3
+ }
+
+### 8. Get Trainer Profile (GET method)
+
+GET localhost:8080/api/v1/trainer
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+
+
+### Update Trainer Profile (PUT method)
+
+PUT localhost:8080/api/v1/trainer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+
+
+{
+    "firstName": "Sanjar",
+    "lastName": "Niyazov",
+    "trainingTypeId":2,
+    "isActive": true
+
+}
+
+### 10. Get not assigned on trainee active trainers.
+
+GET localhost:8080/api/v1/trainer/unassigned/Trainee1.Miller
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+
+
+### 16. Activate/De-Activate Trainer (PATCH method)
+
+PATCH localhost:8080/api/v1/trainer/active
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFsaV9BRE1JTi5BbGl5ZXZfdHJhaW5lciIsImlhdCI6MTc3NTMwNzcwMywiZXhwIjoxNzc1NTY2OTAzfQ.PssXMlNGhNvokvJ5G6H6O0FfPvO48gFpWeJBZ-HeXlvESZNKD7vfblP5geYlOtFW
+
+
+{
+    "username": "Ali_ADMIN3.Aliyev_trainer3",
+    "isActive": false
+}
