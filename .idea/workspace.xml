@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4146370-e12a-4f58-9b76-873805fe33f6" name="Changes" comment="" />
+    <list default="true" id="b4146370-e12a-4f58-9b76-873805fe33f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,31 +41,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.auth | //    3. Login (GET method).executor": "Run",
-    "HTTP Request.trainer | #1.executor": "Run",
-    "HTTP Request.training | 14. Add Training (POST method).executor": "Run",
-    "HTTP Request.training | Delete Training (DELETE method).executor": "Run",
-    "JUnit.TrainingServiceTest.executor": "Run",
-    "Maven.workload [clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.EurekaserverApplication.executor": "Run",
-    "Spring Boot.GymApplication.executor": "Run",
-    "Spring Boot.WorkloadApplication.executor": "Run",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.auth | //    3. Login (GET method).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.trainer | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.training | 14. Add Training (POST method).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.training | Delete Training (DELETE method).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TrainingServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.workload [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GymApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.WorkloadApplication.executor&quot;: &quot;Run&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -121,8 +123,8 @@
       <item itemvalue="HTTP Request.trainer | #1" />
       <item itemvalue="HTTP Request.training | 14. Add Training (POST method)" />
       <item itemvalue="HTTP Request.training | Delete Training (DELETE method)" />
-      <item itemvalue="Spring Boot.GymApplication" />
       <item itemvalue="Spring Boot.WorkloadApplication" />
+      <item itemvalue="Spring Boot.GymApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -153,7 +155,8 @@
       <workItem from="1777384977370" duration="1196000" />
       <workItem from="1777459363875" duration="7590000" />
       <workItem from="1777466990459" duration="23000" />
-      <workItem from="1777467056461" duration="24000" />
+      <workItem from="1777467056461" duration="172000" />
+      <workItem from="1777467264123" duration="19000" />
     </task>
     <servers />
   </component>
