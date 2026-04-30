@@ -23,6 +23,9 @@ public class WorkloadService {
     private final WorkloadRepository workloadRepository;
     private final WorkloadMapperI workloadMapperI;
 
+    // TODO:
+    //  1. Have you added validation rules for year, month and duration?
+    //  2. 'calculateWorkingHours' suppose to return something, right? Seems like method should be named 'updateWorkload' or similar
     public void calculateWorkingHours(TrainerWorkloadRequest request) {
         Workload workload;
         if (request.getActionType() == ActionType.ADD) {

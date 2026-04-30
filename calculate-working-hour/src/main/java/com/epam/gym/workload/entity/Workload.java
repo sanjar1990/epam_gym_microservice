@@ -10,6 +10,11 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+
+// TODO:
+//  This is a flat model, compared to the nested one specified in the task . It's not only denormalizes database
+//  with one row per trainer per month and overcomplicates grouping and summing up the data in your service, but also
+//  will have to be changed for the future NoSQL task. Please update according to the requirements
 @Entity
 @Getter
 @Setter

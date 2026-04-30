@@ -78,6 +78,8 @@ public class SecurityConfig {
                 "http://127.0.0.1:3000"
         ));
 
+        // TODO:
+        //  Why is PATCH not allowed?
         configuration.setAllowedMethods(List.of(
                 "GET", "POST", "PUT", "DELETE", "OPTIONS"
         ));

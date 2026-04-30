@@ -18,6 +18,8 @@ import java.util.function.Function;
 
 public class JwtUtil {
 
+    // TODO:
+    //  Store in properties
     private static String secretkey = "awlfjeqoiphrfeqhrfhhhqwrqwejlfrghjfgyutuurytegrfwwhyrthrtyhthrthyhrtyhrtyhrrtge4e454";
 
     public JwtUtil() {

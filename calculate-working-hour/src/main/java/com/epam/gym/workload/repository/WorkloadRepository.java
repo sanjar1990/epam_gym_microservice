@@ -12,6 +12,9 @@ import java.util.Optional;
 
 @Repository
 public interface WorkloadRepository extends JpaRepository<Workload, Long> {
+    // TODO:
+    //  After you align your model with the task you'll probably won't need this query, but for the future in such cases
+    //  consider using Projections - they are more type-safe and easier to maintain than Object[] arrays
     @Query("""
                 SELECT 
                     w.username,
