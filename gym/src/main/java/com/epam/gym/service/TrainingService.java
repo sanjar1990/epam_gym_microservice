@@ -95,18 +95,21 @@ public class TrainingService {
         toWorkloadService(training.getTrainer(), training, ActionType.DELETE, token);
         log.info("Training deleted {}", trainingId);
     }
+    public void deleteTraining(Training training, String token) {
+        trainingRepository.deleteById(training.getId());
+        toWorkloadService(training.getTrainer(), training, ActionType.DELETE, token);
+        log.info("Training deleted {}", training.getId());
+    }
 
     private void toWorkloadService(Trainer trainer, Training training, ActionType actionType, String token) {
         TrainerWorkloadRequest trainerWorkloadRequest = new TrainerWorkloadRequest();
-        trainerWorkloadRequest.setUsername(trainer.getUser().getUsername());
+        trainerWorkloadRequest.setTrainerUsername(trainer.getUser().getUsername());
         trainerWorkloadRequest.setFirstName(trainer.getUser().getFirstName());
         trainerWorkloadRequest.setLastName(trainer.getUser().getLastName());
         trainerWorkloadRequest.setTrainingDate(training.getTrainingDate());
         trainerWorkloadRequest.setTrainingDuration(training.getTrainingDuration());
-        trainerWorkloadRequest.setIsActive(trainer.getUser().getIsActive());
         trainerWorkloadRequest.setActionType(actionType);
-        trainerWorkloadRequest.setTrainingId(training.getId());
-        workloadClientService.sendWorkload(trainerWorkloadRequest, token, MDC.get("transactionId"));
+        workloadClientService.updateWorkload(trainerWorkloadRequest, token, MDC.get("transactionId"));
     }
 
 

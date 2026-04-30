@@ -7,6 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NullMarked;
 import org.springframework.stereotype.Component;
@@ -19,9 +20,9 @@ import java.util.Arrays;
 @Slf4j
 @Component
 @NullMarked
-
+@RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
-
+    private final JwtUtil jwtUtil;
 
     @Override
     protected boolean shouldNotFilter(@NonNull HttpServletRequest request) {
@@ -65,7 +66,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         try {
             String token = authHeader.substring(7);
-            JwtUtil.validateToken(token);
+            jwtUtil.validateToken(token);
 
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

@@ -12,6 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,27 +44,23 @@ class WorkloadServiceTest {
 
         when(workloadMapper.toEntity(request)).thenReturn(workload);
 
-        workloadService.calculateWorkingHours(request);
+        workloadService.updateWorkload(request);
 
         verify(workloadRepository).save(workload);
         assertEquals(5, workload.getTrainingDuration());
     }
 
     @Test
-    void calculateWorkingHours_shouldSaveNegativeDuration_whenActionIsDelete() {
+    void updateWorkload_shouldCallDelete_whenActionIsDelete() {
         TrainerWorkloadRequest request = new TrainerWorkloadRequest();
         request.setTrainingDuration(5);
+        request.setTrainingDate(LocalDate.now().plusMonths(1)); // important!
         request.setActionType(ActionType.DELETE);
 
-        Workload workload = new Workload();
-        workload.setTrainingDuration(5);
+        workloadService.updateWorkload(request);
 
-        when(workloadMapper.toEntity(request)).thenReturn(workload);
-
-        workloadService.calculateWorkingHours(request);
-
-        verify(workloadRepository).save(workload);
-        assertEquals(-5, workload.getTrainingDuration());
+        verify(workloadRepository)
+                .deleteWorkloads(request.getTrainingDate(), request.getTrainingDuration());
     }
 
     @Test

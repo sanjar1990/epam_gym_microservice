@@ -253,7 +253,7 @@
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <!-- TODO: Version is not needed here — Maven excludes dependencies by groupId and artifactId only -->
+                            <!-- : Version is not needed here — Maven excludes dependencies by groupId and artifactId only -->
                         </exclude>
                     </excludes>
                 </configuration>

@@ -5,10 +5,12 @@ import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.dto.TrainerWorkloadSummeryResponse;
 import com.epam.gym.workload.enums.ActionType;
 import com.epam.gym.workload.service.WorkloadService;
+import com.epam.gym.workload.util.JwtUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
@@ -23,6 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 // TODO:
 //  Compilation error!
+@AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(WorkloadController.class)
 class WorkloadControllerTest {
 
@@ -34,31 +37,33 @@ class WorkloadControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+    @MockitoBean
+    private JwtUtil jwtUtil;
 
     @Test
     void shouldHandlePostRequest() throws Exception {
         TrainerWorkloadRequest request = new TrainerWorkloadRequest();
-        request.setUsername("john");
+        request.setTrainerUsername("john");
         request.setFirstName("John");
         request.setLastName("Doe");
-        request.setIsActive(true);
-        request.setTrainingDate(LocalDate.now());
+        request.setTrainingDate(LocalDate.now().plusMonths(1));
         request.setTrainingDuration(60);
-        request.setActionType(ActionType.ADD); // or whatever enum you have
+        request.setActionType(ActionType.ADD);
 
-        Mockito.doNothing().when(workloadService).calculateWorkingHours(Mockito.any());
+        Mockito.doNothing().when(workloadService).updateWorkload(Mockito.any());
 
         mockMvc.perform(post("/api/v1/workload")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk());
 
-        Mockito.verify(workloadService).calculateWorkingHours(Mockito.any());
+        Mockito.verify(workloadService).updateWorkload(Mockito.any());
     }
 
     @Test
     void shouldReturnMonthlyHours() throws Exception {
         TrainerWorkloadSummeryResponse response = new TrainerWorkloadSummeryResponse();
+
         Mockito.when(workloadService.getWorkload("john", 2024, 5))
                 .thenReturn(response);
 
@@ -69,5 +74,50 @@ class WorkloadControllerTest {
                 .andExpect(content().json(objectMapper.writeValueAsString(response)));
 
         Mockito.verify(workloadService).getWorkload("john", 2024, 5);
+    }
+
+    // ✅ Validation test: invalid month
+    @Test
+    void shouldReturnBadRequest_whenMonthInvalid() throws Exception {
+        mockMvc.perform(get("/api/v1/workload/john")
+                        .param("year", "2024")
+                        .param("month", "13"))
+                .andExpect(status().isBadRequest());
+
+        Mockito.verifyNoInteractions(workloadService);
+    }
+
+    // ✅ Validation test: invalid year
+    @Test
+    void shouldReturnBadRequest_whenYearInvalid() throws Exception {
+        mockMvc.perform(get("/api/v1/workload/john")
+                        .param("year", "1999")
+                        .param("month", "5"))
+                .andExpect(status().isBadRequest());
+
+        Mockito.verifyNoInteractions(workloadService);
+    }
+
+    // ✅ Validation test: missing params
+    @Test
+    void shouldReturnBadRequest_whenParamsMissing() throws Exception {
+        mockMvc.perform(get("/api/v1/workload/john"))
+                .andExpect(status().isBadRequest());
+
+        Mockito.verifyNoInteractions(workloadService);
+    }
+
+    // ✅ Validation test: invalid POST body
+    @Test
+    void shouldReturnBadRequest_whenPostBodyInvalid() throws Exception {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        // Missing required fields intentionally
+
+        mockMvc.perform(post("/api/v1/workload")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isBadRequest());
+
+        Mockito.verifyNoInteractions(workloadService);
     }
 }

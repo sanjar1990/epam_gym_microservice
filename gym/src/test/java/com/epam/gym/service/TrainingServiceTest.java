@@ -92,7 +92,7 @@ class TrainingServiceTest {
 
             verify(trainingRepository).save(training);
             verify(workloadClientService)
-                    .sendWorkload(any(), eq(TOKEN), any());
+                    .updateWorkload(any(), eq(TOKEN), any());
         }
     }
 
@@ -197,7 +197,7 @@ class TrainingServiceTest {
 
         verify(trainingRepository).deleteById(1L);
         verify(workloadClientService)
-                .sendWorkload(any(), eq(TOKEN), any());
+                .updateWorkload(any(), eq(TOKEN), any());
     }
 
     @Test

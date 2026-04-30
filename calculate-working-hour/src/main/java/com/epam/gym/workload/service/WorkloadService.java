@@ -3,12 +3,10 @@ package com.epam.gym.workload.service;
 import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.dto.TrainerWorkloadSummeryResponse;
 import com.epam.gym.workload.dto.TrainingDate;
-import com.epam.gym.workload.dto.WorkloadCalculateRequestDTO;
 import com.epam.gym.workload.entity.Workload;
 import com.epam.gym.workload.enums.ActionType;
 import com.epam.gym.workload.mapper.WorkloadMapperI;
 import com.epam.gym.workload.repository.WorkloadRepository;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -24,28 +22,22 @@ public class WorkloadService {
     private final WorkloadMapperI workloadMapperI;
 
     // TODO:
-    //  1. Have you added validation rules for year, month and duration?
+    //  1. Have you added validation rules for year, month and duration? yes i added
     //  2. 'calculateWorkingHours' suppose to return something, right? Seems like method should be named 'updateWorkload' or similar
-    public void calculateWorkingHours(TrainerWorkloadRequest request) {
+    public void updateWorkload(TrainerWorkloadRequest request) {
         Workload workload;
         if (request.getActionType() == ActionType.ADD) {
             workload = workloadMapperI.toEntity(request);
             workloadRepository.save(workload);
         } else {
-            workload = workloadRepository
-                    .findByTrainingId(request.getTrainingId())
-                    .orElseThrow(() -> new RuntimeException("Workload not found"));
-            workload.setActionType(ActionType.DELETE);
-            workload.setIsActive(false);
+            workloadRepository.deleteWorkloads(request.getTrainingDate(), request.getTrainingDuration());
         }
-
-        workloadRepository.save(workload);
     }
 
 
-    public TrainerWorkloadSummeryResponse getWorkload(WorkloadCalculateRequestDTO dto) {
+    public TrainerWorkloadSummeryResponse getWorkload(String trainerUsername, int year, int month) {
 
-        List<Object[]> rows = workloadRepository.getMonthlySummary(dto.getTrainerUsername());
+        List<Object[]> rows = workloadRepository.getMonthlySummary(trainerUsername);
 
         if (rows.isEmpty()) {
             return null;
@@ -60,7 +52,7 @@ public class WorkloadService {
             int rowMonth = (int) row[5];
             int duration = ((Long) row[6]).intValue();
 
-            if (rowYear == dto.getDate().getYear() && rowMonth == dto.getDate().getMonthValue()) {
+            if (rowYear == year && rowMonth == month) {
                 response.setUsername((String) row[0]);
                 response.setFirstName((String) row[1]);
                 response.setLastName((String) row[2]);
@@ -79,7 +71,5 @@ public class WorkloadService {
         return response;
     }
 
-    public void deleteWorkload(@Valid List<Long> trainingIdList) {
-        workloadRepository.deleteByTrainingId(trainingIdList);
-    }
+
 }

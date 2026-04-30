@@ -20,13 +20,11 @@ import java.time.LocalDate;
 @Setter
 public class Workload extends BaseEntity {
     @Column(nullable = false)
-    private String username;
+    private String trainerUsername;
     @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
     private String lastName;
-    @Column(nullable = false)
-    private Boolean isActive;
     @Column(nullable = false)
     private LocalDate trainingDate;
     @Column(nullable = false)
@@ -34,7 +32,5 @@ public class Workload extends BaseEntity {
     @Column()
     @Enumerated(EnumType.STRING)
     private ActionType actionType;
-    @Column(nullable = false)
-    private Long trainingId;
 
 }

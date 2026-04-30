@@ -5,31 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4146370-e12a-4f58-9b76-873805fe33f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/dto/WorkloadCalculateRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/resources/http/workload.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T201044.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T201113.400.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T201456.400.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T202125.400.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T203320.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T203507.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T203811.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T204025.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T204037.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T204114.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T204600.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T205127.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T205154.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T213407.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T213519.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T213740.200.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/exceptions/handler/APIExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T213804.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T221429.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T221512.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T221553.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T221710.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T222713.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-04-29T222751.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/f-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/f-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/f-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/f-4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/f-5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/f-6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/f.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/config/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/controller/WorkloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/controller/WorkloadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/dto/TrainerWorkloadRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/dto/TrainerWorkloadRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/dto/WorkloadCalculateRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/entity/Workload.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/entity/Workload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/filter/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/filter/JwtFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/repository/WorkloadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/repository/WorkloadRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/service/WorkloadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/service/WorkloadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/java/com/epam/gym/workload/util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/main/resources/http/workload.http" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/main/resources/http/workload.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/test/java/com/epam/gym/workload/controller/WorkloadControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/test/java/com/epam/gym/workload/controller/WorkloadControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate-working-hour/src/test/java/com/epam/gym/workload/service/WorkloadServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculate-working-hour/src/test/java/com/epam/gym/workload/service/WorkloadServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,18 +85,26 @@
     "HTTP Request.training | Delete Training (DELETE method).executor": "Run",
     "HTTP Request.workload | GEt workload calculated by trainer username and date (GET method).executor": "Run",
     "JUnit.AuthControllerTest.executor": "Run",
+    "JUnit.AuthServiceTest.executor": "Run",
     "JUnit.CustomUserDetailsServiceTest.executor": "Run",
     "JUnit.CustomUserDetailsTest.executor": "Run",
     "JUnit.ExternalApiHealthIndicatorTest.executor": "Run",
+    "JUnit.JwtTokenServiceTest.executor": "Run",
+    "JUnit.LoginAttemptServiceTest.executor": "Run",
     "JUnit.MetricsConfigTest.executor": "Run",
     "JUnit.SecurityConfigTest.executor": "Run",
     "JUnit.TraineeControllerTest.executor": "Run",
     "JUnit.TraineeServiceTest.executor": "Run",
     "JUnit.TrainerControllerTest.executor": "Run",
+    "JUnit.TrainerServiceTest.executor": "Run",
     "JUnit.TrainingCapacityHealthIndicatorTest.executor": "Run",
     "JUnit.TrainingControllerTest.executor": "Run",
     "JUnit.TrainingServiceTest.executor": "Run",
+    "JUnit.TrainingTypeControllerTest.executor": "Run",
     "JUnit.TransactionFilterTest.executor": "Run",
+    "JUnit.WorkloadControllerTest.executor": "Run",
+    "JUnit.WorkloadControllerTest.shouldHandlePostRequest.executor": "Run",
+    "JUnit.WorkloadServiceTest.executor": "Run",
     "Maven.workload [clean].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -101,6 +116,7 @@
     "Spring Boot.GymApplication.executor": "Run",
     "Spring Boot.WorkloadApplication.executor": "Run",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "G:/PROGRAMMING/Java Projects/epam_gym/calculate-working-hour/src/main/java/com/epam/gym/workload",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -110,6 +126,11 @@
 }]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\PROGRAMMING\Java Projects\epam_gym\calculate-working-hour\src\main\java\com\epam\gym\workload" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -121,32 +142,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SpringSecurityUtilTest">
-    <configuration name="SpringSecurityUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WorkloadControllerTest">
+    <configuration name="TraineeServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gym" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epam.gym.util.*" />
+          <option name="PATTERN" value="com.epam.gym.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.epam.gym.util" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.gym.util.SpringSecurityUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TrainingSpecificationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gym" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.gym.specification.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.gym.specification" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.gym.specification.TrainingSpecificationTest" />
+      <option name="PACKAGE_NAME" value="com.epam.gym.service" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.gym.service.TraineeServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,25 +203,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkloadApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="WorkloadControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="workload" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.gym.workload.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.gym.workload.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.gym.workload.controller.WorkloadControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkloadApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
+      <module name="workload" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.gym.workload.WorkloadApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.SpringSecurityUtilTest" />
-      <item itemvalue="JUnit.TrainingSpecificationTest" />
+      <item itemvalue="JUnit.TraineeServiceTest" />
       <item itemvalue="JUnit.TrainingTypeServiceTest" />
       <item itemvalue="JUnit.UserRoleServiceTest" />
       <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="JUnit.WorkloadControllerTest" />
       <item itemvalue="Spring Boot.WorkloadApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpringSecurityUtilTest" />
-        <item itemvalue="JUnit.TrainingSpecificationTest" />
+        <item itemvalue="JUnit.WorkloadControllerTest" />
+        <item itemvalue="JUnit.TraineeServiceTest" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserRoleServiceTest" />
         <item itemvalue="JUnit.TrainingTypeServiceTest" />
@@ -264,14 +291,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/gym/src/main/java/com/epam/gym/service/TrainingService.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/gym/src/main/java/com/epam/gym/filter/TransactionFilter.java</url>
           <line>27</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gym/src/main/java/com/epam/gym/service/TrainingService.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

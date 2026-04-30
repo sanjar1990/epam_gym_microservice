@@ -11,13 +11,11 @@ import java.util.List;
 public class WorkloadClientFallback implements WorkloadClientService {
 
     @Override
-    public void sendWorkload(TrainerWorkloadRequest request, String token, String transactionId) {
-        log.error("Workload service is DOWN. Fallback triggered for user: {}", request.getUsername());
+    public void updateWorkload(TrainerWorkloadRequest request, String token, String transactionId) {
+        log.error("Workload service is DOWN. Fallback triggered for user: {}", request.getTrainerUsername());
+        log.error("Workload service is DOWN. Fallback triggered for transactionId: {}", transactionId);
     }
 
-    @Override
-    public void deleteWorkload(List<Long> trainingIdList, String token, String transactionId) {
-        log.error("Workload service is DOWN. Fallback triggered for transaction Id: {}", transactionId);
 
-    }
+
 }

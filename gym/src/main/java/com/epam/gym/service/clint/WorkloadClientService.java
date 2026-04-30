@@ -14,13 +14,8 @@ import java.util.List;
 public interface WorkloadClientService {
 
     @PostMapping("/api/v1/workload")
-    void sendWorkload(@RequestBody TrainerWorkloadRequest request,
+    void updateWorkload(@RequestBody TrainerWorkloadRequest request,
                       @RequestHeader("Authorization") String token,
                       @RequestHeader("X-Transaction-Id") String transactionId);
-
-    @DeleteMapping("/api/v1/workload")
-    void deleteWorkload(@Valid @RequestBody List<Long> trainingIdList,
-                        @RequestHeader("Authorization") String token,
-                        @RequestHeader("X-Transaction-Id") String transactionId);
 
 }

@@ -6,8 +6,8 @@ Content-Type: application/json
 
 {
   "traineeUsername": "TraineeTwo.MillerovTwo",
-  "trainingDate": "2026-05-30",
-  "trainingDuration": 20,
+  "trainingDate": "2026-05-20",
+  "trainingDuration": 50,
   "trainingTypeId": 3
 }
 

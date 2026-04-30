@@ -2,15 +2,16 @@ package com.epam.gym.workload.controller;
 
 import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.dto.TrainerWorkloadSummeryResponse;
-import com.epam.gym.workload.dto.WorkloadCalculateRequestDTO;
 import com.epam.gym.workload.service.WorkloadService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+@Validated
 @RestController
 @RequestMapping("/api/v1/workload")
 @RequiredArgsConstructor
@@ -23,27 +24,30 @@ public class WorkloadController {
         // TODO:
         //  Use logging instead of System.out.println, consider meaningful messages.
         //  Please check other places in the project using System.out.println and change them to logging as well
-        System.out.println("CONTROLLER");
-        workloadService.calculateWorkingHours(request);
+        //  done
+        workloadService.updateWorkload(request);
     }
 
     // TODO:
     //  1. GET requests are not supposed to have a body. Please don't change to POST, work with params instead
     //  trainerUsername, year, month - should be enough.
     //  2. Let's return a flat structure without extra information { username, year, month, workload }
-    @GetMapping
+    // done
+    @GetMapping("/{username}")
     public TrainerWorkloadSummeryResponse getMonthlyHours(
-            @RequestBody WorkloadCalculateRequestDTO dto) {
+            @PathVariable("username") String trainerUsername,
+            @RequestParam
+            @Min(value = 2000, message = "Year must be >= 2000")
+            int year,
 
-        return workloadService.getWorkload(dto);
+            @RequestParam
+            @Min(value = 1, message = "Month must be between 1 and 12")
+            @Max(value = 12, message = "Month must be between 1 and 12") int month) {
+        return workloadService.getWorkload(trainerUsername, year, month);
     }
 
     // TODO:
     //  use existing POST "/api/v1/workload" with actionType=DELETE
-    @DeleteMapping
-    @ResponseStatus(HttpStatus.OK)
-    public void deleteWorkload(@Valid @RequestBody List<Long> trainingIdList) {
+    // Done
 
-        workloadService.deleteWorkload(trainingIdList);
-    }
 }

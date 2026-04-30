@@ -51,10 +51,10 @@ public class TrainingController {
         return ResponseEntity.ok(trainingService.addTraining(dto, token));
     }
 
-    //    14 Add Training (POST method)
+    //    14 delete Training (POST method)
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @DeleteMapping("/{trainingId}")
-    @Operation(summary = " 14 Adddelete Training", description = "")
+    @Operation(summary = " 14 delete Training", description = "")
     @ResponseStatus(HttpStatus.OK)
     public void deleteTraining(@PathVariable Long trainingId, @RequestHeader("Authorization") String token) {
         trainingService.deleteTraining(trainingId, token);

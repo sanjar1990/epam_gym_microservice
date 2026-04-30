@@ -24,8 +24,4 @@ public abstract class BaseEntity implements Serializable {
     @UpdateTimestamp
     @Column(name = "updated_on")
     private LocalDateTime updatedOn;
-    @Column
-    private Boolean isActive = true;
-
-
 }

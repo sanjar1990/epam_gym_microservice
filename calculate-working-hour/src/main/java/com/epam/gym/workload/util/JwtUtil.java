@@ -5,6 +5,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -15,12 +17,15 @@ import java.util.function.Function;
 
 
 @Slf4j
-
+@Service
 public class JwtUtil {
 
     // TODO:
     //  Store in properties
-    private static String secretkey = "awlfjeqoiphrfeqhrfhhhqwrqwejlfrghjfgyutuurytegrfwwhyrthrtyhthrthyhrtyhrtyhrrtge4e454";
+    // DONE
+    @Value("${secret.key}")
+    private String secretkey;
+//    private static String secretkey = "awlfjeqoiphrfeqhrfhhhqwrqwejlfrghjfgyutuurytegrfwwhyrthrtyhthrthyhrtyhrtyhrrtge4e454";
 
     public JwtUtil() {
         try {
@@ -33,35 +38,35 @@ public class JwtUtil {
     }
 
 
-    public static String extractUserName(String token) {
+    public  String extractUserName(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
-    private static <T> T extractClaim(String token, Function<Claims, T> claimResolver) {
+    private  <T> T extractClaim(String token, Function<Claims, T> claimResolver) {
         final Claims claims = extractAllClaims(token);
         return claimResolver.apply(claims);
     }
 
-    private static Claims extractAllClaims(String token) {
+    private  Claims extractAllClaims(String token) {
         return Jwts.parser().verifyWith(getKey()).build().parseSignedClaims(token).getPayload();
     }
 
 
-    private static boolean isTokenExpired(String token) {
+    private  boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }
 
-    private static Date extractExpiration(String token) {
+    private  Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
 
 
-    private static SecretKey getKey() {
+    private  SecretKey getKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretkey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public static void validateToken(String token) {
+    public  void validateToken(String token) {
         String username = extractUserName(token);
         if (isTokenExpired(token)) {
             throw new RuntimeException("Token is expired");

@@ -10,10 +10,8 @@ import com.epam.gym.exceptions.UserNotFoundException;
 import com.epam.gym.mapper.trainee.TraineeMapperI;
 import com.epam.gym.mapper.trainer.TrainerMapperI;
 import com.epam.gym.repository.TraineeRepository;
-import com.epam.gym.service.clint.WorkloadClientService;
 import com.epam.gym.util.SpringSecurityUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -34,14 +32,14 @@ public class TraineeService {
     private final TraineeMapperI traineeMapperI;
     private final TrainerMapperI trainerMapperI;
     private final PasswordEncoder passwordEncoder;
-    private final WorkloadClientService workloadClientService;
+    private final TrainingService trainingService;
 
 
     @Autowired
     public TraineeService(TraineeRepository traineeRepository, UserService userService,
                           TrainerService trainerService, TraineeMapperI traineeMapperI,
                           TrainerMapperI trainerMapperI, UserRoleService userRoleService,
-                          PasswordEncoder passwordEncoder, WorkloadClientService workloadClientService) {
+                          PasswordEncoder passwordEncoder, TrainingService trainingService) {
         this.traineeRepository = traineeRepository;
         this.userService = userService;
         this.trainerService = trainerService;
@@ -49,7 +47,7 @@ public class TraineeService {
         this.trainerMapperI = trainerMapperI;
         this.userRoleService = userRoleService;
         this.passwordEncoder = passwordEncoder;
-        this.workloadClientService = workloadClientService;
+        this.trainingService = trainingService;
     }
 
     //2. Create Trainee profile.
@@ -103,17 +101,18 @@ public class TraineeService {
     @Transactional
     public void deleteTrainee(String username,String token) {
         Trainee trainee = getTrainee(username);
-        List<Long> trainingIdList = trainee.getTrainings().stream().map(Training::getId).toList();
         for (Trainer trainer : trainee.getTrainers()) {
             trainer.getTrainees().remove(trainee);
+        }
+        for (Training training : trainee.getTrainings()) {
+            trainingService.deleteTraining(training, token);
         }
 
         trainee.getTrainers().clear();
         log.info("Trainee deleted{}", trainee.getId());
         traineeRepository.delete(trainee);
-        workloadClientService.deleteWorkload(trainingIdList, token, MDC.get("transactionId"));
-
     }
+
 
     public Trainee getTrainee(String username) {
         return traineeRepository.findByUserUsername(username)

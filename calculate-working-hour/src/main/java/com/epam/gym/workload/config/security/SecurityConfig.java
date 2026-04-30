@@ -2,6 +2,7 @@ package com.epam.gym.workload.config.security;
 
 
 import com.epam.gym.workload.filter.JwtFilter;
+import com.epam.gym.workload.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,7 +38,7 @@ public class SecurityConfig {
     };
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtUtil jwtUtil) {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
@@ -51,7 +52,7 @@ public class SecurityConfig {
 
                 .logout(logout -> logout.logoutUrl("/auth/logout").permitAll())
                 .authenticationProvider(authenticationProvider())
-                .addFilterBefore(new JwtFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new JwtFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
@@ -79,9 +80,9 @@ public class SecurityConfig {
         ));
 
         // TODO:
-        //  Why is PATCH not allowed?
+        //  Why is PATCH not allowed? added
         configuration.setAllowedMethods(List.of(
-                "GET", "POST", "PUT", "DELETE", "OPTIONS"
+                "GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"
         ));
 
         configuration.setAllowedHeaders(List.of("Authorization",
