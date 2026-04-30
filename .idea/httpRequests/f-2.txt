@@ -1,7 +1,0 @@
-{
-  "firstName": null,
-  "isActive": null,
-  "lastName": null,
-  "username": null,
-  "years": []
-}
