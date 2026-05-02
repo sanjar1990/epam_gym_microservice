@@ -1,6 +1,0 @@
-{
-  "timestamp": "2026-04-30T11:49:31.418Z",
-  "status": 500,
-  "error": "Internal Server Error",
-  "path": "/api/v1/workload/Anna.Khan_trainer"
-}
