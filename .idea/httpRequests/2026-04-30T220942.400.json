@@ -1,6 +1,0 @@
-{
-  "detail": "Failed to read request",
-  "instance": "/api/v1/training",
-  "status": 400,
-  "title": "Bad Request"
-}

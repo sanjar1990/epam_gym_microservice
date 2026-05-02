@@ -1,11 +1,3 @@
 /.env
-/.idea/httpRequests/2026-05-02T220716.400.txt
-/.idea/httpRequests/2026-05-02T220727.200.json
-/.idea/httpRequests/2026-05-02T220738.200.json
-/.idea/httpRequests/2026-05-02T221853.401.json
-/.idea/httpRequests/2026-05-02T221907.200.json
-/.idea/httpRequests/2026-05-02T221917.200.txt
-/.idea/httpRequests/2026-05-02T221943.200.json
-
-/logs/
 /.idea/
+/logs/

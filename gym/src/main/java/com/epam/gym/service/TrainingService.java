@@ -15,6 +15,8 @@ import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,10 +29,10 @@ import java.util.List;
 @Transactional
 public class TrainingService {
     private final TrainingRepository trainingRepository;
-    private final TraineeService traineeService;
+    private final @Lazy TraineeService traineeService;
     private final TrainerService trainerService;
     private final TrainingMapperI trainingMapperI;
-    private final WorkloadClientService workloadClientService;
+    private final  WorkloadClientService workloadClientService;
 
 
     //16. Add training.
@@ -58,7 +60,7 @@ public class TrainingService {
 
         trainingRepository.save(training);
         toWorkloadService(trainer, training, ActionType.ADD, token);
-        log.info("Training added {}", training.getId());
+        log.info("Training added ID: {}", training.getId());
         return training.getId();
     }
 
@@ -95,6 +97,7 @@ public class TrainingService {
         toWorkloadService(training.getTrainer(), training, ActionType.DELETE, token);
         log.info("Training deleted {}", trainingId);
     }
+
     public void deleteTraining(Training training, String token) {
         trainingRepository.deleteById(training.getId());
         toWorkloadService(training.getTrainer(), training, ActionType.DELETE, token);
