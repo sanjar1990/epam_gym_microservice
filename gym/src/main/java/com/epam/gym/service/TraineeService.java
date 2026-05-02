@@ -10,9 +10,11 @@ import com.epam.gym.exceptions.UserNotFoundException;
 import com.epam.gym.mapper.trainee.TraineeMapperI;
 import com.epam.gym.mapper.trainer.TrainerMapperI;
 import com.epam.gym.repository.TraineeRepository;
+import com.epam.gym.repository.TrainingRepository;
 import com.epam.gym.util.SpringSecurityUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +41,7 @@ public class TraineeService {
     public TraineeService(TraineeRepository traineeRepository, UserService userService,
                           TrainerService trainerService, TraineeMapperI traineeMapperI,
                           TrainerMapperI trainerMapperI, UserRoleService userRoleService,
-                          PasswordEncoder passwordEncoder, TrainingService trainingService) {
+                          PasswordEncoder passwordEncoder, @Lazy TrainingService trainingService) {
         this.traineeRepository = traineeRepository;
         this.userService = userService;
         this.trainerService = trainerService;
@@ -49,6 +51,8 @@ public class TraineeService {
         this.passwordEncoder = passwordEncoder;
         this.trainingService = trainingService;
     }
+
+
 
     //2. Create Trainee profile.
     public AuthDTO createTrainee(CreateTraineeRequestDTO dto) {
@@ -64,6 +68,7 @@ public class TraineeService {
 
         traineeRepository.save(trainee);
         userRoleService.merge(trainee.getUser().getId(), List.of(UserRoleEnum.ROLE_TRAINEE));
+
         return new AuthDTO(username, password);
     }
 
@@ -84,7 +89,7 @@ public class TraineeService {
         Trainee trainee = getTrainee(SpringSecurityUtil.getCurrentUser().getUsername());
         traineeMapperI.updateTraineeFromDto(dto, trainee);
 
-        log.info("Trainee updated{}", trainee.getId());
+        log.info("Trainee updated ID:{}", trainee.getId());
         trainee = traineeRepository.save(trainee);
         return traineeMapperI.toTraineeDTO(trainee);
     }
@@ -99,7 +104,7 @@ public class TraineeService {
     //  What does boolean return type represent in this case?
 //    DONE
     @Transactional
-    public void deleteTrainee(String username,String token) {
+    public void deleteTrainee(String username, String token) {
         Trainee trainee = getTrainee(username);
         for (Trainer trainer : trainee.getTrainers()) {
             trainer.getTrainees().remove(trainee);

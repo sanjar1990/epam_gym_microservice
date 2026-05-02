@@ -23,10 +23,9 @@ class AuthDTOTest {
 
     @Test
     void validDto_shouldHaveNoViolations() {
-        AuthDTO dto = new AuthDTO("john", "Toshiba_1990$");
+        AuthDTO dto = new AuthDTO("jonn", "Toshiba_1990$");
 
         Set<ConstraintViolation<AuthDTO>> violations = validator.validate(dto);
-
         assertTrue(violations.isEmpty());
     }
 
