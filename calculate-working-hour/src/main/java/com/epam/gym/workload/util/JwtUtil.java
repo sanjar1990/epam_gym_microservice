@@ -25,7 +25,6 @@ public class JwtUtil {
     // DONE
     @Value("${secret.key}")
     private String secretkey;
-//    private static String secretkey = "awlfjeqoiphrfeqhrfhhhqwrqwejlfrghjfgyutuurytegrfwwhyrthrtyhthrthyhrtyhrtyhrrtge4e454";
 
     public JwtUtil() {
         try {
