@@ -49,7 +49,6 @@ public class JwtFilter extends OncePerRequestFilter {
 
 
             long time = System.currentTimeMillis() - start;
-            System.out.println("URI:" + request.getRequestURI());
             log.info("[TRANSACTION END] {} {} | status={} | time={}ms",
                     request.getMethod(),
                     request.getRequestURI(),

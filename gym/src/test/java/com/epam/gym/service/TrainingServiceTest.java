@@ -4,7 +4,6 @@ import com.epam.gym.dto.*;
 import com.epam.gym.entity.*;
 import com.epam.gym.mapper.training.TrainingMapperI;
 import com.epam.gym.repository.TrainingRepository;
-import com.epam.gym.service.clint.WorkloadClientService;
 import com.epam.gym.util.SpringSecurityUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,7 +39,7 @@ class TrainingServiceTest {
     private TrainingMapperI trainingMapperI;
 
     @Mock
-    private WorkloadClientService workloadClientService;
+    private WorkloadConnectionI workloadClientService;
 
     @InjectMocks
     private TrainingService trainingService;

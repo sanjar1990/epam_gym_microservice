@@ -20,7 +20,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 // TODO:
-//  Compilation error!
+//  Compilation error! --fixed
 @ExtendWith(MockitoExtension.class)
 class WorkloadServiceTest {
 
@@ -99,9 +99,9 @@ class WorkloadServiceTest {
         assertTrue(response.getIsActive());
 
         assertEquals(1, response.getYears().size());
-        assertEquals(10, response.getYears().get(0).getDuration());
-        assertEquals(2024, response.getYears().get(0).getYear());
-        assertEquals(6, response.getYears().get(0).getMonth());
+        assertEquals(10, response.getYears().getFirst().getDuration());
+        assertEquals(2024, response.getYears().getFirst().getYear());
+        assertEquals(6, response.getYears().getFirst().getMonth());
     }
 
     @Test

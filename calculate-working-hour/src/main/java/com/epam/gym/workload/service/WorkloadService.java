@@ -23,7 +23,8 @@ public class WorkloadService {
 
     // TODO:
     //  1. Have you added validation rules for year, month and duration? yes i added
-    //  2. 'calculateWorkingHours' suppose to return something, right? Seems like method should be named 'updateWorkload' or similar
+    //  2. 'calculateWorkingHours' suppose to return something, right?
+    //  Seems like method should be named 'updateWorkload' or similar --done
     public void updateWorkload(TrainerWorkloadRequest request) {
         Workload workload;
         if (request.getActionType() == ActionType.ADD) {
