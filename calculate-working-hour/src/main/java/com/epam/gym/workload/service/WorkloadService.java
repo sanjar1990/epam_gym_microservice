@@ -26,6 +26,9 @@ public class WorkloadService {
     //  2. 'calculateWorkingHours' suppose to return something, right?
     //  Seems like method should be named 'updateWorkload' or similar --done
     public void updateWorkload(TrainerWorkloadRequest request) {
+        if (request == null) {
+            throw new NullPointerException("Request cannot be null");
+        }
         Workload workload;
         if (request.getActionType() == ActionType.ADD) {
             workload = workloadMapperI.toEntity(request);

@@ -61,6 +61,50 @@ class WorkloadControllerTest {
     }
 
     @Test
+    void shouldReturnNullBody_whenServiceReturnsNull() throws Exception {
+        Mockito.when(workloadService.getWorkload("john", 2024, 5))
+                .thenReturn(null);
+
+        mockMvc.perform(get("/api/v1/workload/john")
+                        .param("year", "2024")
+                        .param("month", "5"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(""));
+
+        Mockito.verify(workloadService).getWorkload("john", 2024, 5);
+    }
+
+    @Test
+    void shouldReturnBadRequest_whenServiceThrows() throws Exception {
+        Mockito.when(workloadService.getWorkload("john", 2024, 5))
+                .thenThrow(new RuntimeException("DB error"));
+
+        mockMvc.perform(get("/api/v1/workload/john")
+                        .param("year", "2024")
+                        .param("month", "5"))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("DB error"));
+    }
+
+    @Test
+    void shouldHandlePostRequest_whenActionIsDelete() throws Exception {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        request.setTrainerUsername("john");
+        request.setFirstName("John");
+        request.setLastName("Doe");
+        request.setTrainingDate(LocalDate.now().plusDays(1));
+        request.setTrainingDuration(60);
+        request.setActionType(ActionType.DELETE);
+
+        mockMvc.perform(post("/api/v1/workload")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isOk());
+
+        Mockito.verify(workloadService).updateWorkload(Mockito.any());
+    }
+
+    @Test
     void shouldReturnMonthlyHours() throws Exception {
         TrainerWorkloadSummeryResponse response = new TrainerWorkloadSummeryResponse();
 
@@ -76,7 +120,6 @@ class WorkloadControllerTest {
         Mockito.verify(workloadService).getWorkload("john", 2024, 5);
     }
 
-    // ✅ Validation test: invalid month
     @Test
     void shouldReturnBadRequest_whenMonthInvalid() throws Exception {
         mockMvc.perform(get("/api/v1/workload/john")
@@ -87,7 +130,6 @@ class WorkloadControllerTest {
         Mockito.verifyNoInteractions(workloadService);
     }
 
-    // ✅ Validation test: invalid year
     @Test
     void shouldReturnBadRequest_whenYearInvalid() throws Exception {
         mockMvc.perform(get("/api/v1/workload/john")
@@ -98,7 +140,6 @@ class WorkloadControllerTest {
         Mockito.verifyNoInteractions(workloadService);
     }
 
-    // ✅ Validation test: missing params
     @Test
     void shouldReturnBadRequest_whenParamsMissing() throws Exception {
         mockMvc.perform(get("/api/v1/workload/john"))
@@ -107,7 +148,6 @@ class WorkloadControllerTest {
         Mockito.verifyNoInteractions(workloadService);
     }
 
-    // ✅ Validation test: invalid POST body
     @Test
     void shouldReturnBadRequest_whenPostBodyInvalid() throws Exception {
         TrainerWorkloadRequest request = new TrainerWorkloadRequest();

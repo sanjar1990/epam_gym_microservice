@@ -16,8 +16,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 // TODO:
 //  Compilation error! --fixed
@@ -49,7 +48,50 @@ class WorkloadServiceTest {
         verify(workloadRepository).save(workload);
         assertEquals(5, workload.getTrainingDuration());
     }
+    @Test
+    void updateWorkload_shouldNotCallDelete_whenActionIsAdd() {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        request.setActionType(ActionType.ADD);
 
+        when(workloadMapper.toEntity(request)).thenReturn(new Workload());
+
+        workloadService.updateWorkload(request);
+
+        verify(workloadRepository, never())
+                .deleteWorkloads(any(LocalDate.class), anyInt());
+    }
+    @Test
+    void updateWorkload_shouldNotCallSave_whenActionIsDelete() {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        request.setActionType(ActionType.DELETE);
+        request.setTrainingDate(LocalDate.now());
+        request.setTrainingDuration(10);
+
+        workloadService.updateWorkload(request);
+
+        verify(workloadRepository, never()).save(any());
+    }
+    @Test
+    void updateWorkload_shouldHandleNullDate_whenDelete() {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        request.setActionType(ActionType.DELETE);
+        request.setTrainingDuration(10);
+        request.setTrainingDate(null);
+
+        workloadService.updateWorkload(request);
+
+        verify(workloadRepository)
+                .deleteWorkloads(null, 10);
+    }
+    @Test
+    void updateWorkload_shouldCallMapper_whenActionIsAdd() {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        request.setActionType(ActionType.ADD);
+
+        workloadService.updateWorkload(request);
+
+        verify(workloadMapper).toEntity(request);
+    }
     @Test
     void updateWorkload_shouldCallDelete_whenActionIsDelete() {
         TrainerWorkloadRequest request = new TrainerWorkloadRequest();
@@ -110,6 +152,82 @@ class WorkloadServiceTest {
                 "john", "John", "Doe", true,
                 2023, 5, 10L
         };
+
+        when(workloadRepository.getMonthlySummary("john"))
+                .thenReturn(List.<Object[]>of(row));
+
+        TrainerWorkloadSummeryResponse response =
+                workloadService.getWorkload("john", 2024, 6);
+
+        assertNotNull(response);
+        assertTrue(response.getYears().isEmpty());
+    }
+
+    @Test
+    void updateWorkload_shouldCallSaveEvenIfMapperReturnsNull() {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        request.setTrainingDuration(10);
+        request.setActionType(ActionType.ADD);
+
+        when(workloadMapper.toEntity(request)).thenReturn(null);
+
+        workloadService.updateWorkload(request);
+
+        verify(workloadRepository).save(null);
+    }
+    @Test
+    void updateWorkload_shouldThrowException_whenRequestIsNull() {
+        assertThrows(NullPointerException.class, () ->
+                workloadService.updateWorkload(null)
+        );
+    }
+    @Test
+    void updateWorkload_shouldCallDelete_whenActionTypeIsNull() {
+        TrainerWorkloadRequest request = new TrainerWorkloadRequest();
+        request.setTrainingDuration(10);
+        request.setTrainingDate(LocalDate.now());
+
+        workloadService.updateWorkload(request);
+
+        verify(workloadRepository)
+                .deleteWorkloads(request.getTrainingDate(), request.getTrainingDuration());
+    }
+
+    @Test
+    void getWorkload_shouldStillSetUsernameFromRow() {
+        Object[] row = new Object[]{
+                "differentUser", "John", "Doe", true,
+                2024, 6, 10L
+        };
+        when(workloadRepository.getMonthlySummary("john"))
+                .thenReturn(List.<Object[]>of(row));
+
+        TrainerWorkloadSummeryResponse response =
+                workloadService.getWorkload("john", 2024, 6);
+
+        assertNotNull(response);
+        assertEquals("differentUser", response.getUsername());
+    }
+    @Test
+    void getWorkload_shouldHandleNullNames() {
+        Object[] row = new Object[]{
+                "john", null, null, true,
+                2024, 6, 10L
+        };
+
+        when(workloadRepository.getMonthlySummary("john"))
+                .thenReturn(List.<Object[]>of(row));
+
+        TrainerWorkloadSummeryResponse response =
+                workloadService.getWorkload("john", 2024, 6);
+
+        assertNotNull(response);
+        assertNull(response.getFirstName());
+        assertNull(response.getLastName());
+    }
+    @Test
+    void getWorkload_shouldReturnEmptyYears_whenNoMatchButDataExists() {
+        Object[] row = new Object[]{"john", "John", "Doe", true, 2023, 5, 10L};
 
         when(workloadRepository.getMonthlySummary("john"))
                 .thenReturn(List.<Object[]>of(row));

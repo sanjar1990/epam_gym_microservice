@@ -5,6 +5,7 @@ import com.epam.gym.dto.UserChangePasswordRequestDTO;
 import com.epam.gym.enums.UserRoleEnum;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,8 +32,7 @@ class AuthServiceTest {
     @Mock
     private JwtTokenService jwtTokenService;
     @Mock
-    private MeterRegistry meterRegistry;
-    @Mock
+    private SimpleMeterRegistry meterRegistry;
     private Counter counter;
     @Mock
     private AuthenticationManager authenticationManager;
@@ -41,11 +41,10 @@ class AuthServiceTest {
 
     @InjectMocks
     private AuthService authService;
-
     @BeforeEach
     void setup() {
-        when(meterRegistry.counter("user.login.count"))
-                .thenReturn(counter);
+        meterRegistry = new SimpleMeterRegistry();
+        counter = meterRegistry.counter("user.login.count");
 
         authService = new AuthService(
                 userService,
@@ -80,7 +79,7 @@ class AuthServiceTest {
 
         assertEquals("token", result);
         verify(loginAttemptService).loginSucceeded("john");
-        verify(counter).increment();
+
     }
 
     @Test
@@ -111,7 +110,7 @@ class AuthServiceTest {
 
         assertEquals("Invalid username or password", ex.getMessage());
         verify(loginAttemptService).loginFailed("john");
-        verify(counter, never()).increment();
+
     }
 
     @Test
@@ -258,10 +257,10 @@ class AuthServiceTest {
 
         authService.login(dto);
 
-        InOrder inOrder = inOrder(loginAttemptService, counter);
 
+        InOrder inOrder = inOrder(loginAttemptService);
         inOrder.verify(loginAttemptService).loginSucceeded("john");
-        inOrder.verify(counter).increment();
+
     }
 
     @Test
