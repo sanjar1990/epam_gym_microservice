@@ -26,4 +26,6 @@ public class TrainerWorkloadRequest {
     private Integer trainingDuration;
     @NotNull(message = "actionType is required")
     private ActionType actionType;
+    @NotNull(message = "status is required")
+    private Boolean status;
 }

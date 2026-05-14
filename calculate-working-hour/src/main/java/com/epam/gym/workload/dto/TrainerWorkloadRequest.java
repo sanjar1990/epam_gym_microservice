@@ -25,8 +25,6 @@ public class TrainerWorkloadRequest {
     private Integer trainingDuration;
     @NotNull(message = "actionType is required")
     private ActionType actionType;
-    // TODO:
-    //  There trainingId is not expected in request body in the task because workload service
-    //  does not need to know about trainingId neither to ADD nor to DELETE workload. Work with dates please
-    //done
+    @NotNull(message = "status is required")
+    private Boolean status;
 }

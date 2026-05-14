@@ -1,9 +1,12 @@
 package com.epam.gym.workload.service;
 
+import com.epam.gym.workload.dto.MonthlySummaryDTO;
 import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.dto.TrainerWorkloadSummeryResponse;
 import com.epam.gym.workload.dto.TrainingDate;
+import com.epam.gym.workload.entity.MonthSummary;
 import com.epam.gym.workload.entity.Workload;
+import com.epam.gym.workload.entity.YearSummary;
 import com.epam.gym.workload.enums.ActionType;
 import com.epam.gym.workload.mapper.WorkloadMapperI;
 import com.epam.gym.workload.repository.WorkloadRepository;
@@ -21,17 +24,58 @@ public class WorkloadService {
     private final WorkloadRepository workloadRepository;
     private final WorkloadMapperI workloadMapperI;
 
-    // TODO:
-    //  1. Have you added validation rules for year, month and duration? yes i added
-    //  2. 'calculateWorkingHours' suppose to return something, right?
-    //  Seems like method should be named 'updateWorkload' or similar --done
     public void updateWorkload(TrainerWorkloadRequest request) {
         if (request == null) {
             throw new NullPointerException("Request cannot be null");
         }
+
         Workload workload;
         if (request.getActionType() == ActionType.ADD) {
-            workload = workloadMapperI.toEntity(request);
+            workload =
+                    workloadRepository.findByTrainerUsername(request.getTrainerUsername())
+                            .orElseGet(() -> workloadMapperI.toEntity(request));
+
+            int yearValue = request.getTrainingDate().getYear();
+            int monthValue = request.getTrainingDate().getMonthValue();
+            if (workload.getYears() == null) {
+                workload.setYears(new ArrayList<>());
+            }
+            YearSummary yearSummary =
+                    workload.getYears()
+                            .stream()
+                            .filter(y -> y.getYear().equals(yearValue))
+                            .findFirst()
+                            .orElseGet(() -> {
+                                YearSummary newYear =
+                                        YearSummary.builder()
+                                                .year(yearValue)
+                                                .build();
+
+                                workload.getYears().add(newYear);
+                                return newYear;
+                            });
+            if (yearSummary.getMonths() == null) {
+                yearSummary.setMonths(new ArrayList<>());
+            }
+
+            MonthSummary monthSummary = yearSummary.getMonths()
+                    .stream()
+                    .filter(m -> m.getMonth().equals(monthValue))
+                    .findFirst()
+                    .orElseGet(() -> {
+                        MonthSummary newMonth =
+                                MonthSummary.builder()
+                                        .month(monthValue)
+                                        .trainingSummaryDuration(request.getTrainingDuration())
+                                        .build();
+
+                        yearSummary.getMonths().add(newMonth);
+                        return newMonth;
+                    });
+            monthSummary.setTrainingSummaryDuration(
+                    monthSummary.getTrainingSummaryDuration()
+                            + request.getTrainingDuration());
+            workload.setYears(workload.getYears());
             workloadRepository.save(workload);
         } else {
             workloadRepository.deleteWorkloads(request.getTrainingDate(), request.getTrainingDuration());
@@ -39,28 +83,35 @@ public class WorkloadService {
     }
 
 
-    public TrainerWorkloadSummeryResponse getWorkload(String trainerUsername, int year, int month) {
+    public TrainerWorkloadSummeryResponse getWorkload(
+            String trainerUsername,
+            int year,
+            int month
+    ) {
 
-        List<Object[]> rows = workloadRepository.getMonthlySummary(trainerUsername);
+        List<MonthlySummaryDTO> rows =
+                workloadRepository.getMonthlySummary(trainerUsername);
 
         if (rows.isEmpty()) {
             return null;
         }
 
-        TrainerWorkloadSummeryResponse response = new TrainerWorkloadSummeryResponse();
+        TrainerWorkloadSummeryResponse response =
+                new TrainerWorkloadSummeryResponse();
+
         List<TrainingDate> list = new ArrayList<>();
 
-        for (Object[] row : rows) {
+        for (MonthlySummaryDTO row : rows) {
 
-            int rowYear = (int) row[4];
-            int rowMonth = (int) row[5];
-            int duration = ((Long) row[6]).intValue();
+            int rowYear = row.getYear();
+            int rowMonth = row.getMonth();
+            int duration = row.getTotalDuration();
 
             if (rowYear == year && rowMonth == month) {
-                response.setUsername((String) row[0]);
-                response.setFirstName((String) row[1]);
-                response.setLastName((String) row[2]);
-                response.setIsActive((Boolean) row[3]);
+
+                response.setUsername(row.getTrainerUsername());
+                response.setFirstName(row.getFirstName());
+                response.setLastName(row.getLastName());
 
                 TrainingDate td = new TrainingDate();
                 td.setYear(rowYear);
@@ -72,6 +123,7 @@ public class WorkloadService {
         }
 
         response.setYears(list);
+
         return response;
     }
 

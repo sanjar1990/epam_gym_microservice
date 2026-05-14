@@ -110,6 +110,7 @@ public class TrainingService {
         trainerWorkloadRequest.setTrainingDate(training.getTrainingDate());
         trainerWorkloadRequest.setTrainingDuration(training.getTrainingDuration());
         trainerWorkloadRequest.setActionType(actionType);
+        trainerWorkloadRequest.setStatus(trainer.getUser().getIsActive());
         workloadConnection.updateWorkload(trainerWorkloadRequest, token, MDC.get("transactionId"));
     }
 

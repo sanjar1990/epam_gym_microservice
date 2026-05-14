@@ -23,8 +23,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-// TODO:
-//  Compilation error!
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(WorkloadController.class)
 class WorkloadControllerTest {
@@ -49,7 +47,7 @@ class WorkloadControllerTest {
         request.setTrainingDate(LocalDate.now().plusMonths(1));
         request.setTrainingDuration(60);
         request.setActionType(ActionType.ADD);
-
+        request.setStatus(true);
         Mockito.doNothing().when(workloadService).updateWorkload(Mockito.any());
 
         mockMvc.perform(post("/api/v1/workload")
@@ -95,7 +93,7 @@ class WorkloadControllerTest {
         request.setTrainingDate(LocalDate.now().plusDays(1));
         request.setTrainingDuration(60);
         request.setActionType(ActionType.DELETE);
-
+        request.setStatus(true);
         mockMvc.perform(post("/api/v1/workload")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
@@ -151,7 +149,6 @@ class WorkloadControllerTest {
     @Test
     void shouldReturnBadRequest_whenPostBodyInvalid() throws Exception {
         TrainerWorkloadRequest request = new TrainerWorkloadRequest();
-        // Missing required fields intentionally
 
         mockMvc.perform(post("/api/v1/workload")
                         .contentType(MediaType.APPLICATION_JSON)
