@@ -3,10 +3,14 @@ package com.epam.gym.workload.service;
 import com.epam.gym.workload.dto.MonthlySummaryDTOImpl;
 import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.dto.TrainerWorkloadSummeryResponse;
+import com.epam.gym.workload.entity.MonthSummary;
 import com.epam.gym.workload.entity.Workload;
+import com.epam.gym.workload.entity.YearSummary;
 import com.epam.gym.workload.enums.ActionType;
 import com.epam.gym.workload.mapper.WorkloadMapperI;
 import com.epam.gym.workload.repository.WorkloadRepository;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -201,5 +205,116 @@ class WorkloadServiceTest {
         assertNotNull(response);
 
         assertTrue(response.getYears().isEmpty());
+    }
+
+    @Nested
+    @DisplayName("Make these tests pass without changing them")
+    class ShouldPass {
+
+        private static final String TRAINER_USERNAME = "john";
+        private static final LocalDate TRAINING_DATE = LocalDate.of(2026, 5, 10);
+
+        @Test
+        void updateWorkload_shouldNotDoubleCountDuration_whenAddCreatesNewMonth() {
+
+            final var request = buildRequest(ActionType.ADD, 60);
+
+            final var existingYear = YearSummary.builder()
+                    .year(2026)
+                    .months(new ArrayList<>())
+                    .build();
+
+            final var workload = new Workload();
+            workload.setYears(new ArrayList<>(List.of(existingYear)));
+
+            when(workloadRepository.findByTrainerUsername(TRAINER_USERNAME))
+                    .thenReturn(Optional.of(workload));
+
+            workloadService.updateWorkload(request);
+
+            assertEquals(1, workload.getYears().size());
+            assertEquals(1, workload.getYears().getFirst().getMonths().size());
+            assertEquals(
+                    60,
+                    workload.getYears().getFirst().getMonths().getFirst().getTrainingSummaryDuration(),
+                    "Expected first insert to store duration once, without double counting"
+            );
+
+            verify(workloadRepository).save(workload);
+        }
+
+        @Test
+        void updateWorkload_shouldDecrementExistingMonthDurationAndSave_whenActionIsDelete() {
+
+            final var request = buildRequest(ActionType.DELETE, 30);
+            final var workload = buildWorkload(90);
+
+            when(workloadRepository.findByTrainerUsername(TRAINER_USERNAME))
+                    .thenReturn(Optional.of(workload));
+
+            workloadService.updateWorkload(request);
+
+            assertEquals(
+                    60,
+                    workload.getYears().getFirst().getMonths().getFirst().getTrainingSummaryDuration(),
+                    "Expected DELETE to decrement summary duration for the target month"
+            );
+
+            verify(workloadRepository).save(workload);
+            verify(workloadRepository, never()).deleteWorkloads(any(), anyInt());
+        }
+
+        @Test
+        void updateWorkload_shouldRemoveEmptyMonthAndYearButKeepTrainerDocument_whenDeleteReachesZero() {
+
+            final var request = buildRequest(ActionType.DELETE, 30);
+            final var workload = buildWorkload(30);
+            workload.setFirstName("John");
+            workload.setLastName("Doe");
+            workload.setStatus(true);
+
+            when(workloadRepository.findByTrainerUsername(TRAINER_USERNAME))
+                    .thenReturn(Optional.of(workload));
+
+            workloadService.updateWorkload(request);
+
+            assertEquals(TRAINER_USERNAME, workload.getTrainerUsername());
+            assertEquals("John", workload.getFirstName());
+            assertEquals("Doe", workload.getLastName());
+            assertTrue(workload.getStatus());
+            assertTrue(
+                    workload.getYears().isEmpty(),
+                    "Expected year to be removed when its last month reaches zero duration"
+            );
+
+            verify(workloadRepository).save(workload);
+            verify(workloadRepository, never()).deleteWorkloads(any(), anyInt());
+        }
+
+        private TrainerWorkloadRequest buildRequest(final ActionType actionType, final int duration) {
+            final var request = new TrainerWorkloadRequest();
+            request.setTrainerUsername(TRAINER_USERNAME);
+            request.setTrainingDate(TRAINING_DATE);
+            request.setTrainingDuration(duration);
+            request.setActionType(actionType);
+            return request;
+        }
+
+        private Workload buildWorkload(final int monthDuration) {
+            final var monthSummary = MonthSummary.builder()
+                    .month(5)
+                    .trainingSummaryDuration(monthDuration)
+                    .build();
+
+            final var yearSummary = YearSummary.builder()
+                    .year(2026)
+                    .months(new ArrayList<>(List.of(monthSummary)))
+                    .build();
+
+            final var workload = new Workload();
+            workload.setTrainerUsername(TRAINER_USERNAME);
+            workload.setYears(new ArrayList<>(List.of(yearSummary)));
+            return workload;
+        }
     }
 }
