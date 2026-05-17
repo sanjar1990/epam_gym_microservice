@@ -1,7 +1,7 @@
 ### 14. Add Training (POST method)
 
 POST localhost:8080/api/v1/training
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFubmEuS2hhbl90cmFpbmVyIiwiaWF0IjoxNzc4NzU1MTYyLCJleHAiOjE3NzkwMTQzNjJ9.k3lFzQCYG6db_4eRMrLGO5F8PIGj6A11iHoA0Gp88PNT6hMtYHn6OB_xS0QtztnC
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFubmEuS2hhbl90cmFpbmVyIiwiaWF0IjoxNzc5MDE0MjA0LCJleHAiOjE3NzkyNzM0MDR9.JmKoOSI52mXnbCAd5xByOW6sPNOTpZhZVjXKPqJk0wWYslFT0AUbCGyFYam8tUj7
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 
 #### Delete Training (DELETE method)
-DELETE localhost:8080/api/v1/training/161
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkpvaG4zLkRvZTMiLCJpYXQiOjE3NzczNzA5NzIsImV4cCI6MTc3NzYzMDE3Mn0.ZMv4ipN1iVPEl4-MBetHpJ1x3wbKuXDnNCOO5um-IdtVB0VSZwmLQNG-nkLpOMTP
+DELETE localhost:8080/api/v1/training/229
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFubmEuS2hhbl90cmFpbmVyIiwiaWF0IjoxNzc5MDE0MjA0LCJleHAiOjE3NzkyNzM0MDR9.JmKoOSI52mXnbCAd5xByOW6sPNOTpZhZVjXKPqJk0wWYslFT0AUbCGyFYam8tUj7
 
 

@@ -4,10 +4,8 @@ import com.epam.gym.workload.dto.MonthlySummaryDTO;
 import com.epam.gym.workload.entity.Workload;
 import org.springframework.data.mongodb.repository.Aggregation;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,8 +32,4 @@ public interface WorkloadRepository extends MongoRepository<Workload, Long> {
                     "} }"
     })
     List<MonthlySummaryDTO> getMonthlySummary(String username);
-
-
-    @Query(value = "{ 'trainingDate': ?0, 'trainingDuration': ?1 }", delete = true)
-    void deleteWorkloads(LocalDate trainingDate, int trainingDuration);
 }

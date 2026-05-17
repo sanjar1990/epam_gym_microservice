@@ -5,6 +5,7 @@ import com.epam.gym.workload.dto.TrainerWorkloadRequest;
 import com.epam.gym.workload.service.WorkloadService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -23,6 +24,7 @@ public class WorkloadMessageListener {
                                @Header(name = "transactionId") String transactionId) {
 
         try {
+            MDC.put("transactionId", transactionId);
             log.info("TransactionId: {}", transactionId);
             jmsSecurityService.validateToken(token);
             workloadService.updateWorkload(message);

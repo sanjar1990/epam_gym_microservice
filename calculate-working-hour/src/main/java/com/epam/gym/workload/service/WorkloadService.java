@@ -12,6 +12,7 @@ import com.epam.gym.workload.mapper.WorkloadMapperI;
 import com.epam.gym.workload.repository.WorkloadRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,7 +29,9 @@ public class WorkloadService {
         if (request == null) {
             throw new NullPointerException("Request cannot be null");
         }
-
+        log.info("[{}] Processing training workload event for trainer={}",
+                MDC.get("transactionId"),
+                request.getTrainerUsername());
         Workload workload;
         if (request.getActionType() == ActionType.ADD) {
             workload =
@@ -66,7 +69,7 @@ public class WorkloadService {
                         MonthSummary newMonth =
                                 MonthSummary.builder()
                                         .month(monthValue)
-                                        .trainingSummaryDuration(request.getTrainingDuration())
+                                        .trainingSummaryDuration(0)
                                         .build();
 
                         yearSummary.getMonths().add(newMonth);
@@ -77,8 +80,49 @@ public class WorkloadService {
                             + request.getTrainingDuration());
             workload.setYears(workload.getYears());
             workloadRepository.save(workload);
+            log.info("[{}] Successfully saved trainer summary for={}",
+                    MDC.get("transactionId"),
+                    request.getTrainerUsername());
         } else {
-            workloadRepository.deleteWorkloads(request.getTrainingDate(), request.getTrainingDuration());
+            workload = workloadRepository
+                    .findByTrainerUsername(request.getTrainerUsername())
+                    .orElseThrow(() -> new RuntimeException("Workload not found"));
+
+            int yearValue = request.getTrainingDate().getYear();
+            int monthValue = request.getTrainingDate().getMonthValue();
+
+            YearSummary yearSummary = workload.getYears()
+                    .stream()
+                    .filter(y -> y.getYear().equals(yearValue))
+                    .findFirst()
+                    .orElseThrow(() -> new RuntimeException("Year not found"));
+
+
+            MonthSummary monthSummary = yearSummary.getMonths()
+                    .stream()
+                    .filter(m -> m.getMonth().equals(monthValue))
+                    .findFirst()
+                    .orElseThrow(() -> new RuntimeException("Month not found"));
+
+            int updatedDuration =
+                    monthSummary.getTrainingSummaryDuration()
+                            - request.getTrainingDuration();
+
+            if (updatedDuration <= 0) {
+                yearSummary.getMonths().remove(monthSummary);
+            } else {
+                monthSummary.setTrainingSummaryDuration(updatedDuration);
+            }
+
+            if (yearSummary.getMonths().isEmpty()) {
+                workload.getYears().remove(yearSummary);
+            }
+
+            workloadRepository.save(workload);
+
+            log.info("[{}] Successfully removed trainer summary for={}",
+                    MDC.get("transactionId"),
+                    request.getTrainerUsername());
         }
     }
 
