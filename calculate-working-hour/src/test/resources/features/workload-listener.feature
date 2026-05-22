@@ -1,17 +1,17 @@
 Feature: Workload JMS Listener
-
+  @positive
   Scenario: Successfully process workload message
     Given valid workload JMS message
     And valid jwt token
     When workload message is consumed
     Then workload service should be invoked
-
+  @negative
   Scenario: Invalid token while processing workload message
     Given valid workload JMS message
     And invalid jwt token
     When workload message is consumed
     Then security exception should be thrown
-
+  @negative
   Scenario: Workload service throws exception
     Given valid workload JMS message
     And valid jwt token
