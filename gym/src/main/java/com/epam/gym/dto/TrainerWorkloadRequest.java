@@ -9,6 +9,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+
 public class TrainerWorkloadRequest {
     @NotBlank(message = "Username is required")
     private String trainerUsername;
@@ -17,12 +18,14 @@ public class TrainerWorkloadRequest {
     @NotBlank(message = "lastName is required")
     private String lastName;
     @NotNull(message = "trainingDate is required")
-    @Future(message = "trainingDate must be in the future")
+    @FutureOrPresent(message = "trainingDate must be in the future")
     private LocalDate trainingDate;
     @NotNull(message = "trainingDuration is required")
-    @Min(value = 30, message = "trainingDuration must be >= 0")
+    @Min(value = 30, message = "trainingDuration must be >= 30")
     @Max(value = 120, message = "trainingDuration must be <= 120")
     private Integer trainingDuration;
     @NotNull(message = "actionType is required")
     private ActionType actionType;
+    @NotNull(message = "status is required")
+    private Boolean status;
 }

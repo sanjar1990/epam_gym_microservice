@@ -21,18 +21,9 @@ public class WorkloadController {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public void workloadAdding(@Valid @RequestBody TrainerWorkloadRequest request) {
-        // TODO:
-        //  Use logging instead of System.out.println, consider meaningful messages.
-        //  Please check other places in the project using System.out.println and change them to logging as well
-        //  done
         workloadService.updateWorkload(request);
     }
 
-    // TODO:
-    //  1. GET requests are not supposed to have a body. Please don't change to POST, work with params instead
-    //  trainerUsername, year, month - should be enough.
-    //  2. Let's return a flat structure without extra information { username, year, month, workload }
-    // done
     @GetMapping("/{username}")
     public TrainerWorkloadSummeryResponse getMonthlyHours(
             @PathVariable("username") String trainerUsername,
@@ -45,9 +36,5 @@ public class WorkloadController {
             @Max(value = 12, message = "Month must be between 1 and 12") int month) {
         return workloadService.getWorkload(trainerUsername, year, month);
     }
-
-    // TODO:
-    //  use existing POST "/api/v1/workload" with actionType=DELETE
-    // Done
 
 }

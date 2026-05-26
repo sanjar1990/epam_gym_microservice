@@ -1,36 +1,49 @@
 package com.epam.gym.workload.entity;
 
-import com.epam.gym.workload.enums.ActionType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+import org.springframework.data.mongodb.core.index.CompoundIndexes;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
-
-// TODO:
-//  This is a flat model, compared to the nested one specified in the task . It's not only denormalizes database
-//  with one row per trainer per month and overcomplicates grouping and summing up the data in your service, but also
-//  will have to be changed for the future NoSQL task. Please update according to the requirements
-@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Getter
 @Setter
-public class Workload extends BaseEntity {
-    @Column(nullable = false)
-    private String trainerUsername;
-    @Column(nullable = false)
-    private String firstName;
-    @Column(nullable = false)
-    private String lastName;
-    @Column(nullable = false)
-    private LocalDate trainingDate;
-    @Column(nullable = false)
-    private Integer trainingDuration;
-    @Column()
-    @Enumerated(EnumType.STRING)
-    private ActionType actionType;
+@Document(collection = "workload")
+@CompoundIndexes({
 
+        @CompoundIndex(
+                name = "trainer_username_idx",
+                def = "{'trainerUsername': 1}",
+                unique = true
+        ),
+
+        @CompoundIndex(
+                name = "trainer_name_idx",
+                def = "{'firstName': 1, 'lastName': 1}"
+        )
+})
+public class Workload {
+
+    @Id
+    private String id;
+
+    private String trainerUsername;
+
+    private String firstName;
+
+    private String lastName;
+
+    private Boolean status;
+
+    private List<YearSummary> years;
+
+    private LocalDateTime createdOn = LocalDateTime.now();
+
+    private LocalDateTime updatedOn = LocalDateTime.now();
 }

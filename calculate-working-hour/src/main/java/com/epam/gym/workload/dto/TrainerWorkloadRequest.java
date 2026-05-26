@@ -17,16 +17,14 @@ public class TrainerWorkloadRequest {
     @NotBlank(message = "lastName is required")
     private String lastName;
     @NotNull(message = "trainingDate is required")
-    @Future(message = "trainingDate must be in the future")
+    @FutureOrPresent(message = "trainingDate must be in the future")
     private LocalDate trainingDate;
     @NotNull(message = "trainingDuration is required")
-    @Min(value = 30, message = "trainingDuration must be >= 0")
+    @Min(value = 30, message = "trainingDuration must be >= 30")
     @Max(value = 120, message = "trainingDuration must be <= 120")
     private Integer trainingDuration;
     @NotNull(message = "actionType is required")
     private ActionType actionType;
-    // TODO:
-    //  There trainingId is not expected in request body in the task because workload service
-    //  does not need to know about trainingId neither to ADD nor to DELETE workload. Work with dates please
-    //done
+    @NotNull(message = "status is required")
+    private Boolean status;
 }

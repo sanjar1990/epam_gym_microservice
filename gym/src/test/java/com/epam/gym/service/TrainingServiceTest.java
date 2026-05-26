@@ -2,16 +2,15 @@ package com.epam.gym.service;
 
 import com.epam.gym.dto.*;
 import com.epam.gym.entity.*;
+import com.epam.gym.enums.ActionType;
 import com.epam.gym.mapper.training.TrainingMapperI;
 import com.epam.gym.repository.TrainingRepository;
-import com.epam.gym.service.clint.WorkloadClientService;
 import com.epam.gym.util.SpringSecurityUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockedStatic;
+import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.slf4j.MDC;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.time.LocalDate;
@@ -20,8 +19,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -40,7 +38,7 @@ class TrainingServiceTest {
     private TrainingMapperI trainingMapperI;
 
     @Mock
-    private WorkloadClientService workloadClientService;
+    private WorkloadConnectionI workloadClientService;
 
     @InjectMocks
     private TrainingService trainingService;
@@ -95,8 +93,216 @@ class TrainingServiceTest {
                     .updateWorkload(any(), eq(TOKEN), any());
         }
     }
+    @Test
+    void addTraining_shouldThrow_whenTrainerTrainingTypeIsNull() {
 
+        CreateTrainingDTO dto = new CreateTrainingDTO();
+        dto.setTraineeUsername("john");
+        dto.setTrainingTypeId(1L);
 
+        Trainee trainee = new Trainee();
+        trainee.setTrainings(new ArrayList<>());
+        trainee.setTrainers(new HashSet<>());
+
+        User user = new User();
+        user.setUsername("mike");
+
+        Trainer trainer = new Trainer();
+        trainer.setUser(user);
+        trainer.setTrainingType(null);
+
+        try (MockedStatic<SpringSecurityUtil> mocked = mockStatic(SpringSecurityUtil.class)) {
+
+            mocked.when(SpringSecurityUtil::getCurrentUser).thenReturn(user);
+
+            when(traineeService.getTrainee("john")).thenReturn(trainee);
+            when(trainerService.getTrainerEntityByUsername("mike")).thenReturn(trainer);
+
+            assertThrows(NullPointerException.class,
+                    () -> trainingService.addTraining(dto, TOKEN));
+        }
+    }
+    @Test
+    void addTraining_shouldSetRelationsCorrectly() {
+
+        CreateTrainingDTO dto = new CreateTrainingDTO();
+        dto.setTraineeUsername("john");
+        dto.setTrainingTypeId(1L);
+
+        Trainee trainee = new Trainee();
+        trainee.setTrainings(new ArrayList<>());
+        trainee.setTrainers(new HashSet<>());
+
+        TrainingType type = new TrainingType();
+        type.setId(1L);
+
+        User user = new User();
+        user.setUsername("mike");
+
+        Trainer trainer = new Trainer();
+        trainer.setUser(user);
+        trainer.setTrainingType(type);
+        trainer.setTrainees(new HashSet<>());
+
+        Training training = new Training();
+        training.setId(1L);
+
+        try (MockedStatic<SpringSecurityUtil> mocked = mockStatic(SpringSecurityUtil.class)) {
+
+            mocked.when(SpringSecurityUtil::getCurrentUser).thenReturn(user);
+
+            when(traineeService.getTrainee("john")).thenReturn(trainee);
+            when(trainerService.getTrainerEntityByUsername("mike")).thenReturn(trainer);
+            when(trainingMapperI.toEntity(dto)).thenReturn(training);
+
+            trainingService.addTraining(dto, TOKEN);
+
+            assertEquals(trainee, training.getTrainee());
+            assertEquals(trainer, training.getTrainer());
+
+            assertTrue(trainee.getTrainings().contains(training));
+            assertTrue(trainee.getTrainers().contains(trainer));
+            assertTrue(trainer.getTrainees().contains(trainee));
+        }
+    }
+    @Test
+    void addTraining_shouldSaveBeforeCallingWorkload() {
+
+        CreateTrainingDTO dto = new CreateTrainingDTO();
+        dto.setTraineeUsername("john");
+        dto.setTrainingTypeId(1L);
+
+        Trainee trainee = new Trainee();
+        trainee.setTrainings(new ArrayList<>());
+        trainee.setTrainers(new HashSet<>());
+
+        TrainingType type = new TrainingType();
+        type.setId(1L);
+
+        User user = new User();
+        user.setUsername("mike");
+
+        Trainer trainer = new Trainer();
+        trainer.setUser(user);
+        trainer.setTrainingType(type);
+        trainer.setTrainees(new HashSet<>());
+
+        Training training = new Training();
+
+        try (MockedStatic<SpringSecurityUtil> mocked = mockStatic(SpringSecurityUtil.class)) {
+
+            mocked.when(SpringSecurityUtil::getCurrentUser).thenReturn(user);
+
+            when(traineeService.getTrainee("john")).thenReturn(trainee);
+            when(trainerService.getTrainerEntityByUsername("mike")).thenReturn(trainer);
+            when(trainingMapperI.toEntity(any())).thenReturn(training);
+
+            trainingService.addTraining(dto, TOKEN);
+
+            InOrder inOrder = inOrder(trainingRepository, workloadClientService);
+
+            inOrder.verify(trainingRepository).save(training);
+            inOrder.verify(workloadClientService)
+                    .updateWorkload(any(), eq(TOKEN), any());
+        }
+    }
+    @Test
+    void addTraining_shouldSendCorrectWorkloadData() {
+
+        CreateTrainingDTO dto = new CreateTrainingDTO();
+        dto.setTraineeUsername("john");
+        dto.setTrainingTypeId(1L);
+        dto.setTrainingDate(LocalDate.now());
+        dto.setTrainingDuration(90);
+
+        Trainee trainee = new Trainee();
+        trainee.setTrainings(new ArrayList<>());
+        trainee.setTrainers(new HashSet<>());
+
+        TrainingType type = new TrainingType();
+        type.setId(1L);
+
+        User user = new User();
+        user.setUsername("mike");
+        user.setFirstName("Mike");
+        user.setLastName("Tyson");
+
+        Trainer trainer = new Trainer();
+        trainer.setUser(user);
+        trainer.setTrainingType(type);
+        trainer.setTrainees(new HashSet<>());
+
+        Training training = new Training();
+        training.setTrainingDate(dto.getTrainingDate());
+        training.setTrainingDuration(dto.getTrainingDuration());
+
+        try (MockedStatic<SpringSecurityUtil> mocked = mockStatic(SpringSecurityUtil.class)) {
+
+            mocked.when(SpringSecurityUtil::getCurrentUser).thenReturn(user);
+
+            when(traineeService.getTrainee("john")).thenReturn(trainee);
+            when(trainerService.getTrainerEntityByUsername("mike")).thenReturn(trainer);
+            when(trainingMapperI.toEntity(dto)).thenReturn(training);
+
+            trainingService.addTraining(dto, TOKEN);
+
+            ArgumentCaptor<TrainerWorkloadRequest> captor =
+                    ArgumentCaptor.forClass(TrainerWorkloadRequest.class);
+
+            verify(workloadClientService)
+                    .updateWorkload(captor.capture(), eq(TOKEN), any());
+
+            TrainerWorkloadRequest sent = captor.getValue();
+
+            assertEquals("mike", sent.getTrainerUsername());
+            assertEquals("Mike", sent.getFirstName());
+            assertEquals("Tyson", sent.getLastName());
+            assertEquals(dto.getTrainingDate(), sent.getTrainingDate());
+            assertEquals(dto.getTrainingDuration(), sent.getTrainingDuration());
+            assertEquals(ActionType.ADD, sent.getActionType());
+        }
+    }
+
+    @Test
+    void addTraining_shouldPassTransactionIdFromMDC() {
+
+        try (MockedStatic<SpringSecurityUtil> secMock = mockStatic(SpringSecurityUtil.class);
+             MockedStatic<MDC> mdcMock = mockStatic(MDC.class)) {
+
+            CreateTrainingDTO dto = new CreateTrainingDTO();
+            dto.setTraineeUsername("john");
+            dto.setTrainingTypeId(1L);
+
+            Trainee trainee = new Trainee();
+            trainee.setTrainings(new ArrayList<>());
+            trainee.setTrainers(new HashSet<>());
+
+            TrainingType type = new TrainingType();
+            type.setId(1L);
+
+            User user = new User();
+            user.setUsername("mike");
+
+            Trainer trainer = new Trainer();
+            trainer.setUser(user);
+            trainer.setTrainingType(type);
+            trainer.setTrainees(new HashSet<>());
+
+            Training training = new Training();
+
+            secMock.when(SpringSecurityUtil::getCurrentUser).thenReturn(user);
+            mdcMock.when(() -> MDC.get("transactionId")).thenReturn("tx-999");
+
+            when(traineeService.getTrainee("john")).thenReturn(trainee);
+            when(trainerService.getTrainerEntityByUsername("mike")).thenReturn(trainer);
+            when(trainingMapperI.toEntity(any())).thenReturn(training);
+
+            trainingService.addTraining(dto, TOKEN);
+
+            verify(workloadClientService)
+                    .updateWorkload(any(), eq(TOKEN), eq("tx-999"));
+        }
+    }
     @Test
     void addTraining_shouldThrow_whenTrainingTypeMismatch() {
 

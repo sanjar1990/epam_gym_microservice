@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = "com.epam.gym.service.clint")
+//@EnableFeignClients(basePackages = "com.epam.gym.service.clint")
+
 public class GymApplication {
 
     public static void main(String[] args) {

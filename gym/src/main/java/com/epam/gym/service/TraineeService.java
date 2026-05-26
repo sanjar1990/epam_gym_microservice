@@ -10,7 +10,6 @@ import com.epam.gym.exceptions.UserNotFoundException;
 import com.epam.gym.mapper.trainee.TraineeMapperI;
 import com.epam.gym.mapper.trainer.TrainerMapperI;
 import com.epam.gym.repository.TraineeRepository;
-import com.epam.gym.repository.TrainingRepository;
 import com.epam.gym.util.SpringSecurityUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +50,6 @@ public class TraineeService {
         this.passwordEncoder = passwordEncoder;
         this.trainingService = trainingService;
     }
-
 
 
     //2. Create Trainee profile.

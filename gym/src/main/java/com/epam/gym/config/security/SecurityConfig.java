@@ -34,7 +34,8 @@ public class SecurityConfig {
             "/api/v1/auth/**",
             "/api/v1/trainer/register",
             "/api/v1/trainee/register",
-            "/api/v1/training-type"
+            "/api/v1/training-type",
+            "/api/v1/message/**",
     };
 
     @Bean

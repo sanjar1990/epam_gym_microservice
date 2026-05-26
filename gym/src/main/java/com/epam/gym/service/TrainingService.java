@@ -6,8 +6,8 @@ import com.epam.gym.entity.Trainer;
 import com.epam.gym.entity.Training;
 import com.epam.gym.enums.ActionType;
 import com.epam.gym.mapper.training.TrainingMapperI;
+import com.epam.gym.message.WorkloadProducer;
 import com.epam.gym.repository.TrainingRepository;
-import com.epam.gym.service.clint.WorkloadClientService;
 import com.epam.gym.specification.TrainingSpecification;
 import com.epam.gym.util.SpringSecurityUtil;
 import io.micrometer.core.annotation.Counted;
@@ -15,30 +15,28 @@ import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-@Transactional
+
 public class TrainingService {
     private final TrainingRepository trainingRepository;
     private final @Lazy TraineeService traineeService;
     private final TrainerService trainerService;
     private final TrainingMapperI trainingMapperI;
-    private final  WorkloadClientService workloadClientService;
+    private final WorkloadConnectionI workloadConnection;
 
 
     //16. Add training.
     @Timed(value = "training.create.time", description = "Time to create training")
     @Counted(value = "training.create.count", description = "Count training creation")
-    @Transactional
     public Long addTraining(CreateTrainingDTO dto, String token) {
 
 
@@ -112,7 +110,8 @@ public class TrainingService {
         trainerWorkloadRequest.setTrainingDate(training.getTrainingDate());
         trainerWorkloadRequest.setTrainingDuration(training.getTrainingDuration());
         trainerWorkloadRequest.setActionType(actionType);
-        workloadClientService.updateWorkload(trainerWorkloadRequest, token, MDC.get("transactionId"));
+        trainerWorkloadRequest.setStatus(trainer.getUser().getIsActive());
+        workloadConnection.updateWorkload(trainerWorkloadRequest, token, MDC.get("transactionId"));
     }
 
 
