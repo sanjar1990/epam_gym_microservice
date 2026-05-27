@@ -41,12 +41,16 @@ services:
     environment:
       ACTIVEMQ_BROKER_URL: tcp://activemq-ms:61616
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-ms:8761/eureka
+      MONGODB_URI: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongo-db:27017/reportdb?authSource=${MONGO_USERNAME}
+      MONGODB_DATABASE: reportdb
     depends_on:
       activemq:
         condition: service_started
 
       eureka:
         condition: service_started
+      mongo-db:
+        condition: service_healthy
 
 
   activemq:
@@ -79,7 +83,31 @@ services:
       POSTGRES_DB: maindb
     networks:
       - gym
-
+  mongo-db:
+    image: mongo:7
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: reportdb
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    healthcheck:
+      test: >
+        mongosh --username ${MONGO_USERNAME}
+        --password ${MONGO_PASSWORD}
+        --authenticationDatabase admin
+        --eval "db.adminCommand('ping')"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - gym
 networks:
   gym:
     driver: bridge
+volumes:
+  mongo-data:
