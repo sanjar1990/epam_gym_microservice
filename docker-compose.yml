@@ -1,0 +1,85 @@
+services:
+  eureka:
+    image: sanjar1990/eureka:v1
+    container_name: eureka-ms
+    ports:
+      - "8761:8761"
+    networks:
+      - gym
+  main:
+    image: sanjar1990/main:v1
+    container_name: main-ms
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    networks:
+      - gym
+    environment:
+      ACTIVEMQ_BROKER_URL: tcp://activemq-ms:61616
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-ms:8761/eureka
+      SPRING_DATASOURCE_URL: jdbc:postgresql://main-db:5432/maindb
+    depends_on:
+      activemq:
+        condition: service_started
+
+      eureka:
+        condition: service_started
+
+      main-db:
+        condition: service_healthy
+
+  report:
+    image: sanjar1990/report:v1
+    container_name: report-ms
+    ports:
+      - "8082:8082"
+    env_file:
+      - .env
+    networks:
+      - gym
+    environment:
+      ACTIVEMQ_BROKER_URL: tcp://activemq-ms:61616
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-ms:8761/eureka
+    depends_on:
+      activemq:
+        condition: service_started
+
+      eureka:
+        condition: service_started
+
+
+  activemq:
+    image: webcenter/activemq:latest
+    container_name: activemq-ms
+    ports:
+      - "61616:61616"   # JMS
+      - "8161:8161"     # Web Console
+    environment:
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: admin
+    networks:
+      - gym
+  main-db:
+    image: postgres:13
+    container_name: main-db
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      timeout: 10s
+      retries: 10
+      interval: 10s
+      start_period: 10s
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: maindb
+    networks:
+      - gym
+
+networks:
+  gym:
+    driver: bridge

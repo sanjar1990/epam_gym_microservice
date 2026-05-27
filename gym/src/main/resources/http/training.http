@@ -1,12 +1,12 @@
 ### 14. Add Training (POST method)
 
 POST localhost:8080/api/v1/training
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFubmEuS2hhbl90cmFpbmVyIiwiaWF0IjoxNzc5MDE0MjA0LCJleHAiOjE3NzkyNzM0MDR9.JmKoOSI52mXnbCAd5xByOW6sPNOTpZhZVjXKPqJk0wWYslFT0AUbCGyFYam8tUj7
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6WyJST0xFX1RSQUlORVIiLCJST0xFX0FETUlOIl0sInN1YiI6IkFubmEuS2hhbl90cmFpbmVyIiwiaWF0IjoxNzc5ODcxNzY5LCJleHAiOjE3ODAxMzA5Njl9.Ugq7K4Q850h0orzjVd3dZWW36n1ALf55-CECNr1MMiebIhq0JfL3AwHDK8crpHiH
 Content-Type: application/json
 
 {
   "traineeUsername": "TraineeTwo.MillerovTwo",
-  "trainingDate": "2026-05-20",
+  "trainingDate": "2026-06-20",
   "trainingDuration": 50,
   "trainingTypeId": 3
 }
